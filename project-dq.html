@@ -1,0 +1,265 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Data Quality & Governance Scorecard | Poojasri Medikonda</title>
+
+<meta name="description" content="Case study: data quality rules, validation checks, and a governance-style scorecard." />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="header">
+
+<div class="container">
+
+<nav class="nav" aria-label="Primary">
+
+<a class="brand" href="index.html" aria-label="Home">
+
+Poojasri Medikonda
+
+Business / Data Analyst
+
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="nav-cta">
+
+<a class="btn" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+
+<a class="btn" href="Poojasri_Medikonda_Cover_Letter.pdf" target="_blank" rel="noreferrer">Cover Letter (PDF)</a>
+
+<a class="btn primary" href="projects.html">All Projects</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="main" id="content">
+
+<div class="container">
+
+<section class="card panel">
+
+<div class="kicker">Case study • Data Quality</div>
+
+<h1 style="margin-top:8px; font-size: 30px; letter-spacing:-0.4px;">Data Quality & Governance Scorecard</h1>
+
+<p style="margin-top:10px; color: var(--muted); max-width: 95ch;">
+
+A rules-based scorecard to measure completeness, validity, uniqueness, and consistency so stakeholders can trust reporting outputs.
+
+</p>
+
+<div class="tags" style="margin-top: 12px;">
+
+SQL
+
+Python
+
+Power BI
+
+Documentation
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h2>1) Business problem</h2>
+
+<ul class="list">
+
+<li>Reporting accuracy suffers when key fields are missing, duplicated, or inconsistent.</li>
+
+<li>Teams need measurable data quality monitoring over time, not one-time fixes.</li>
+
+<li>Data issues should be visible with clear ownership and rule definitions.</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h2>2) DQ dimensions</h2>
+
+<ul class="list">
+
+<li><strong>Completeness</strong>: missing critical values</li>
+
+<li><strong>Validity</strong>: invalid formats or impossible values</li>
+
+<li><strong>Uniqueness</strong>: duplicate keys or duplicate rows</li>
+
+<li><strong>Consistency</strong>: mismatched categories, standardization issues</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3) Dataset (example)</h2>
+
+<p class="sub">Use any dataset; the “premium” part is the rule design + documentation.</p>
+
+<div class="card panel">
+
+<ul class="list">
+
+<li>Primary key field(s) defined (example: customer_id / ticket_id).</li>
+
+<li>Critical fields defined (example: date, status, category, amount).</li>
+
+<li>Allowed values documented for category/status fields.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4) Process</h2>
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Rule library</h3>
+
+<ul class="list">
+
+<li>Created rule definitions with clear pass/fail conditions.</li>
+
+<li>Wrote SQL checks to output bad_count and bad_percent per rule.</li>
+
+<li>Maintained a rule catalog (rule_name, description, threshold, owner).</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Scorecard</h3>
+
+<ul class="list">
+
+<li>Computed DQ % and an overall DQ score by dataset/domain.</li>
+
+<li>Tracked DQ score trend over time.</li>
+
+<li>Highlighted top failing fields and likely root causes.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5) Visuals</h2>
+
+<p class="sub">Replace placeholders with screenshots when your dashboard/report is ready.</p>
+
+<div class="grid two">
+
+<div class="thumb">Scorecard screenshot (Overview)</div>
+
+<div class="thumb">Top failing rules (field-level breakdown)</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6) Deliverables</h2>
+
+<div class="card panel">
+
+<ul class="list">
+
+<li>DQ rules library (documented)</li>
+
+<li>SQL outputs: rule_name, total_records, bad_count, bad_percent</li>
+
+<li>Dashboard: DQ trend + top failing rules + drilldowns</li>
+
+</ul>
+
+</div>
+
+<div style="margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap;">
+
+<a class="btn primary" href="projects.html">Back to Projects</a>
+
+<a class="btn" href="contact.html">Contact</a>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<div>©  Poojasri Medikonda</div>
+
+<div class="small">Case study • Data Quality Scorecard</div>
+
+</div>
+
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+
+</html>
