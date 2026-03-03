@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SLA & Backlog Efficiency Dashboard | Poojasri Medikonda</title>
+<meta name="description" content="Case study: SLA adherence, backlog aging, breach drivers, and ops reporting improvements." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="header">
+<div class="container">
+<nav class="nav" aria-label="Primary">
+<a class="brand" href="index.html" aria-label="Home">
+Poojasri Medikonda
+Business / Data Analyst
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+<a class="btn" href="Poojasri_Medikonda_Cover_Letter.pdf" target="_blank" rel="noreferrer">Cover Letter (PDF)</a>
+<a class="btn primary" href="projects.html">All Projects</a>
+</div>
+</nav>
+</div>
+</header>
+<main class="main" id="content">
+<div class="container">
+<section class="card panel">
+<div class="kicker">Case study • Operations Analytics</div>
+<h1 style="margin-top:8px; font-size: 30px; letter-spacing:-0.4px;">SLA & Backlog Efficiency Dashboard</h1>
+<p style="margin-top:10px; color: var(--muted); max-width: 95ch;">
+A stakeholder-ready dashboard to monitor SLA adherence, backlog aging, and breach drivers.
+Designed for quick triage, drilldowns, and operational decision-making.
+</p>
+<div class="tags" style="margin-top: 12px;">
+SQL
+Power BI
+Excel
+Data Validation
+</div>
+</section>
+<section class="section">
+<div class="grid two">
+<div class="card panel">
+<h2>1) Business problem</h2>
+<ul class="list">
+<li>SLA reporting was hard to trust due to inconsistent definitions and double-counting risk.</li>
+<li>Backlog status was unclear without aging buckets and queue-wise drilldowns.</li>
+<li>Stakeholders needed quick answers: “What is breaching, why, and where?”</li>
+</ul>
+</div>
+<div class="card panel">
+<h2>2) Outcome</h2>
+<ul class="list">
+<li>Standardized KPI logic: SLA on-time %, breach rate, and backlog aging buckets.</li>
+<li>Added validation checks to reduce errors and improve report reliability.</li>
+<li>Built a clean dashboard with drilldowns by queue, priority, and reason.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>3) Dataset (example schema)</h2>
+<p class="sub">Use this structure whether your data is real, public, or synthetic.</p>
+<div class="card panel">
+<ul class="list">
+<li><strong>tickets</strong>: ticket_id, created_at, closed_at, status, queue, priority</li>
+<li><strong>sla</strong>: ticket_id, sla_due_at, breached_flag, breach_reason</li>
+<li><strong>agents</strong> (optional): agent_id, team, location</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2>4) Process</h2>
+<div class="grid two">
+<div class="card panel">
+<h3 style="font-size: 16px;">SQL + validation</h3>
+<ul class="list">
+<li>Cleaned and standardized fields (status, queue names, reasons).</li>
+<li>Calculated resolution time and aging buckets.</li>
+<li>Validation checks: duplicates, missing timestamps, invalid states.</li>
+</ul>
+</div>
+<div class="card panel">
+<h3 style="font-size: 16px;">Dashboard design</h3>
+<ul class="list">
+<li>Overview: SLA on-time %, breaches, backlog volume.</li>
+<li>Drivers: breach reasons, priority, queue performance.</li>
+<li>Aging: 0–1, 2–3, 4–7, 8+ day buckets.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>5) Visuals</h2>
+<p class="sub">Replace these placeholders with dashboard screenshots.</p>
+<div class="grid two">
+<div class="thumb">Dashboard screenshot (Overview)</div>
+<div class="thumb">Dashboard screenshot (Drivers / Aging)</div>
+</div>
+</section>
+<section class="section">
+<h2>6) Insights & impact (example)</h2>
+<div class="card panel">
+<ul class="list">
+<li>Identified top breach drivers by queue and reason category.</li>
+<li>Highlighted aging concentration in specific queues (bottleneck indicator).</li>
+<li>Recommended actions: queue rebalancing, reason-code cleanup, SLA definition alignment.</li>
+</ul>
+</div>
+<div style="margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap;">
+<a class="btn primary" href="projects.html">Back to Projects</a>
+<a class="btn" href="contact.html">Contact</a>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div>©  Poojasri Medikonda</div>
+<div class="small">Case study • SLA & Backlog Analytics</div>
+</div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
