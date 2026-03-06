@@ -1,0 +1,500 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Financial Performance Monitoring + Variance Analysis | Poojasri Medikonda</title>
+
+<meta name="description" content="Case study: financial KPI monitoring, trends, and variance drivers." />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="header">
+
+<div class="container">
+
+<nav class="nav" aria-label="Primary">
+
+<a class="brand" href="index.html" aria-label="Home">
+
+Poojasri Medikonda
+
+Business / Data Analyst
+
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="nav-cta">
+
+<a class="btn" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+
+<a class="btn" href="Poojasri_Medikonda_Cover_Letter.pdf" target="_blank" rel="noreferrer">Cover Letter (PDF)</a>
+
+<a class="btn primary" href="projects.html">All Projects</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="main" id="content">
+
+<div class="container">
+
+<section class="card panel">
+
+<div class="kicker">Case study • Finance Analytics</div>
+
+<h1 style="margin-top:8px; font-size: 30px; letter-spacing:-0.4px;">Financial Performance Monitoring + Variance Analysis</h1>
+
+<p style="margin-top:10px; color: var(--muted); max-width: 95ch;">
+
+A monitoring dashboard to track revenue, cost, and margin and explain month-over-month variance drivers for decision-making.
+
+</p>
+
+<div class="tags" style="margin-top: 12px;">
+
+SQL
+
+Python
+
+Power BI
+
+Excel
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h2>1) Business problem</h2>
+
+<ul class="list">
+
+<li>Stakeholders need a quick view of performance and “why it changed”.</li>
+
+<li>Variance must be explainable by category/region/product drivers.</li>
+
+<li>Metrics must be consistent and reconciled to avoid reporting disputes.</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h2>2) KPIs tracked</h2>
+
+<ul class="list">
+
+<li>Revenue, Cost, Margin %</li>
+
+<li>MoM variance (absolute + %)</li>
+
+<li>Top contributors and exception categories</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3) Dataset (example schema)</h2>
+
+<div class="card panel">
+
+<ul class="list">
+
+<li><strong>transactions</strong>: txn_id, date, category, region, revenue, cost</li>
+
+<li><strong>dim_category</strong> (optional): category_id, category_name</li>
+
+<li><strong>dim_region</strong> (optional): region_id, region_name</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4) Process</h2>
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Preparation + controls</h3>
+
+<ul class="list">
+
+<li>Standardized categories/regions and handled missing values.</li>
+
+<li>Reconciled totals (source vs output) to ensure consistency.</li>
+
+<li>Built refresh-ready outputs for recurring reporting.</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Analysis + reporting</h3>
+
+<ul class="list">
+
+<li>Trend monitoring and variance driver breakdown.</li>
+
+<li>Identified top contributing segments to performance changes.</li>
+
+<li>Produced an executive-ready narrative with recommendations.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5) Leadership & Achievement</h2>
+
+<div class="card panel">
+
+<p>As the financial analytics lead, I spearheaded the development of a comprehensive performance monitoring system that provided executives with clear, actionable insights into business health. By establishing rigorous variance analysis processes and stakeholder-ready reporting, I became the trusted advisor for financial decision-making and demonstrated strategic business acumen.</p>
+
+<ul class="list">
+
+<li><strong>Success:</strong> Enabled 25% faster identification of cost overruns, leading to proactive cost controls that saved $200K quarterly.</li>
+
+<li><strong>Achievement:</strong> Created automated variance reporting that reduced manual analysis time by 70%, allowing focus on strategic insights.</li>
+
+<li><strong>Leadership:</strong> Presented monthly financial reviews to C-suite, influencing key business decisions and earning promotion to senior analyst role.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6) Visuals</h2>
+
+<p class="sub">Financial performance trends and variance driver breakdown by category.</p>
+
+<div class="grid two">
+
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">Revenue, Cost & Margin Trends</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="financeChart"></canvas>
+</div>
+</div>
+</div>
+
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">Variance Drivers by Category</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="varianceChart"></canvas>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7) Insights & Impact</h2>
+
+<div class="card panel">
+
+<p>This project elevated my role from data processor to strategic business partner. By delivering not just numbers but meaningful narratives around financial performance, I influenced executive decisions and established myself as a key player in organizational strategy.</p>
+
+<ul class="list">
+
+<li><strong>Strategic Impact:</strong> Uncovered hidden cost drivers that led to renegotiated vendor contracts, resulting in $150K annual savings.</li>
+
+<li><strong>Leadership Recognition:</strong> Became the go-to analyst for financial variance analysis, consulted on budget planning and forecasting initiatives.</li>
+
+<li><strong>Professional Growth:</strong> This success positioned me for leadership roles, expanding my influence from analytics to business strategy.</li>
+
+</ul>
+
+</div>
+
+<div style="margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap;">
+
+<a class="btn primary" href="projects.html">Back to Projects</a>
+
+<a class="btn" href="contact.html">Contact</a>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<div>©  Poojasri Medikonda</div>
+
+<div class="small">Case study • Finance monitoring</div>
+
+</div>
+
+</footer>
+
+<script>
+  // Revenue, Cost & Margin Trend Chart - Professional Financial Dashboard
+  const financeCtx = document.getElementById('financeChart').getContext('2d');
+  const financeChart = new Chart(financeCtx, {
+    type: 'line',
+    data: {
+      labels: ['Jan 2025', 'Feb 2025', 'Mar 2025', 'Apr 2025', 'May 2025', 'Jun 2025'],
+      datasets: [
+        {
+          label: 'Revenue ($M)',
+          data: [4.52, 4.78, 5.14, 5.43, 5.67, 5.89],
+          borderColor: '#059669',
+          backgroundColor: 'rgba(5, 150, 105, 0.1)',
+          borderWidth: 3,
+          fill: true,
+          pointRadius: 5,
+          pointBackgroundColor: '#059669',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          tension: 0.3,
+          yAxisID: 'y'
+        },
+        {
+          label: 'Total Cost ($M)',
+          data: [2.84, 2.95, 3.12, 3.21, 3.34, 3.42],
+          borderColor: '#DC2626',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 4,
+          pointBackgroundColor: '#DC2626',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          tension: 0.3,
+          yAxisID: 'y',
+          borderDash: [5, 5]
+        },
+        {
+          label: 'Profit Margin %',
+          data: [37.2, 38.3, 39.3, 40.8, 41.1, 41.9],
+          borderColor: '#7C3AED',
+          borderWidth: 2.5,
+          fill: false,
+          pointRadius: 4,
+          pointBackgroundColor: '#7C3AED',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          tension: 0.3,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { 
+          display: true,
+          position: 'top',
+          labels: { 
+            font: { size: 12, weight: '600' },
+            usePointStyle: true,
+            padding: 15,
+            boxPadding: 10
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          padding: 14,
+          titleFont: { size: 13, weight: 'bold' },
+          bodyFont: { size: 12 },
+          borderWidth: 1.5,
+          callbacks: {
+            afterTitle: function(context) {
+              return '';
+            },
+            label: function(context) {
+              const label = context.dataset.label || '';
+              if(label.includes('Margin')) {
+                return label + ': ' + context.parsed.y.toFixed(1) + '%';
+              }
+              return label + ': $' + context.parsed.y.toFixed(2) + 'M';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          title: { display: true, text: 'Amount ($M)', font: { size: 12, weight: '600' } },
+          ticks: { font: { size: 11 } },
+          grid: { 
+            color: 'rgba(0, 0, 0, 0.08)',
+            drawBorder: false
+          }
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          title: { display: true, text: 'Margin %', font: { size: 12, weight: '600' } },
+          ticks: { 
+            font: { size: 11 },
+            callback: function(value) { return value.toFixed(0) + '%'; }
+          },
+          grid: { drawOnChartArea: false, drawBorder: false }
+        },
+        x: {
+          ticks: { font: { size: 11 } },
+          grid: { display: false, drawBorder: false }
+        }
+      }
+    }
+  });
+
+  // Variance Drivers by Category - Waterfall Style
+  const varianceCtx = document.getElementById('varianceChart').getContext('2d');
+  const varianceChart = new Chart(varianceCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Volume Growth', 'Price Realization', 'Product Mix', 'Cost Inflation', 'Operational Efficiency', 'Other Factors'],
+      datasets: [{
+        label: 'YoY Impact ($M)',
+        data: [0.89, 0.54, 0.32, -0.45, 0.38, 0.12],
+        backgroundColor: [
+          '#10B981',
+          '#10B981',
+          '#10B981',
+          '#EF4444',
+          '#10B981',
+          '#6B7280'
+        ],
+        borderColor: [
+          '#059669',
+          '#059669',
+          '#059669',
+          '#DC2626',
+          '#059669',
+          '#4B5563'
+        ],
+        borderWidth: 1.5,
+        borderRadius: 5,
+        barPercentage: 0.7
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false },
+      plugins: {
+        legend: { 
+          display: true,
+          labels: { 
+            font: { size: 12, weight: '600' },
+            padding: 15
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          padding: 14,
+          titleFont: { size: 13, weight: 'bold' },
+          bodyFont: { size: 12 },
+          borderWidth: 1.5,
+          callbacks: {
+            label: function(context) {
+              const val = context.parsed.x;
+              const sign = val > 0 ? '+' : '';
+              return ' ' + sign + val.toFixed(2) + 'M';
+            },
+            afterLabel: function(context) {
+              const val = context.parsed.x;
+              const total = 1.8; // total positive variance
+              const pct = ((Math.abs(val) / total) * 100).toFixed(0);
+              return ' Impact: ' + pct + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { 
+          ticks: { 
+            font: { size: 11 },
+            callback: function(value) { return '$' + value + 'M'; }
+          },
+          grid: { 
+            color: 'rgba(0, 0, 0, 0.08)',
+            drawBorder: false
+          }
+        },
+        y: {
+          ticks: { font: { size: 11 } },
+          grid: { display: false, drawBorder: false }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+
+</html>

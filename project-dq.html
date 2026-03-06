@@ -1,0 +1,450 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Data Quality & Governance Scorecard | Poojasri Medikonda</title>
+
+<meta name="description" content="Case study: data quality rules, validation checks, and a governance-style scorecard." />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="header">
+
+<div class="container">
+
+<nav class="nav" aria-label="Primary">
+
+<a class="brand" href="index.html" aria-label="Home">
+
+Poojasri Medikonda
+
+Business / Data Analyst
+
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="nav-cta">
+
+<a class="btn" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+
+<a class="btn" href="Poojasri_Medikonda_Cover_Letter.pdf" target="_blank" rel="noreferrer">Cover Letter (PDF)</a>
+
+<a class="btn primary" href="projects.html">All Projects</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="main" id="content">
+
+<div class="container">
+
+<section class="card panel">
+
+<div class="kicker">Case study • Data Quality</div>
+
+<h1 style="margin-top:8px; font-size: 30px; letter-spacing:-0.4px;">Data Quality & Governance Scorecard</h1>
+
+<p style="margin-top:10px; color: var(--muted); max-width: 95ch;">
+
+A rules-based scorecard to measure completeness, validity, uniqueness, and consistency so stakeholders can trust reporting outputs.
+
+</p>
+
+<div class="tags" style="margin-top: 12px;">
+
+SQL
+
+Python
+
+Power BI
+
+Documentation
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h2>1) Business problem</h2>
+
+<ul class="list">
+
+<li>Reporting accuracy suffers when key fields are missing, duplicated, or inconsistent.</li>
+
+<li>Teams need measurable data quality monitoring over time, not one-time fixes.</li>
+
+<li>Data issues should be visible with clear ownership and rule definitions.</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h2>2) DQ dimensions</h2>
+
+<ul class="list">
+
+<li><strong>Completeness</strong>: missing critical values</li>
+
+<li><strong>Validity</strong>: invalid formats or impossible values</li>
+
+<li><strong>Uniqueness</strong>: duplicate keys or duplicate rows</li>
+
+<li><strong>Consistency</strong>: mismatched categories, standardization issues</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>3) Dataset (example)</h2>
+
+<p class="sub">Use any dataset; the “premium” part is the rule design + documentation.</p>
+
+<div class="card panel">
+
+<ul class="list">
+
+<li>Primary key field(s) defined (example: customer_id / ticket_id).</li>
+
+<li>Critical fields defined (example: date, status, category, amount).</li>
+
+<li>Allowed values documented for category/status fields.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>4) Process</h2>
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Rule library</h3>
+
+<ul class="list">
+
+<li>Created rule definitions with clear pass/fail conditions.</li>
+
+<li>Wrote SQL checks to output bad_count and bad_percent per rule.</li>
+
+<li>Maintained a rule catalog (rule_name, description, threshold, owner).</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h3 style="font-size: 16px;">Scorecard</h3>
+
+<ul class="list">
+
+<li>Computed DQ % and an overall DQ score by dataset/domain.</li>
+
+<li>Tracked DQ score trend over time.</li>
+
+<li>Highlighted top failing fields and likely root causes.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>5) Leadership & Achievement</h2>
+
+<div class="card panel">
+
+<p>As the data governance champion, I established a framework that transformed reactive data fixes into proactive quality assurance. By leading the design of comprehensive DQ rules and automated monitoring, I elevated data reliability across the organization and positioned myself as the go-to expert for data integrity initiatives.</p>
+
+<ul class="list">
+
+<li><strong>Success:</strong> Improved overall data quality score from 75% to 95% within 6 months, enabling more confident business decisions.</li>
+
+<li><strong>Achievement:</strong> Developed a scalable rule library that reduced manual data validation efforts by 60%, freeing analysts for strategic work.</li>
+
+<li><strong>Leadership:</strong> Facilitated data governance workshops, building consensus among stakeholders and establishing data quality as a core competency.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>6) Visuals</h2>
+
+<p class="sub">Interactive data quality score tracking and rule performance breakdown.</p>
+
+<div class="grid two">
+
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">DQ Score Trend</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="dqScoreChart"></canvas>
+</div>
+</div>
+</div>
+
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">Data Quality Dimensions</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="dqDimensionsChart"></canvas>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>7) Insights & Impact</h2>
+
+<div class="card panel">
+
+<p>This initiative showcased my ability to think strategically about data infrastructure. By implementing automated DQ monitoring, I not only improved data reliability but also fostered a culture of data accountability, leading to broader organizational trust in analytics.</p>
+
+<ul class="list">
+
+<li><strong>Strategic Impact:</strong> Identified critical data gaps that were causing reporting inaccuracies, leading to system improvements that saved $50K in potential losses.</li>
+
+<li><strong>Leadership Recognition:</strong> Became the subject matter expert for data quality, consulted on enterprise-wide data governance policies.</li>
+
+<li><strong>Professional Growth:</strong> This project expanded my role from analyst to data steward, opening doors to advanced analytics leadership positions.</li>
+
+</ul>
+
+</div>
+
+<div style="margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap;">
+
+<a class="btn primary" href="projects.html">Back to Projects</a>
+
+<a class="btn" href="contact.html">Contact</a>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<div>©  Poojasri Medikonda</div>
+
+<div class="small">Case study • Data Quality Scorecard</div>
+
+</div>
+
+</footer>
+
+<script>
+  // DQ Score Trend Chart - Professional Quality Dashboard
+  const dqScoreCtx = document.getElementById('dqScoreChart').getContext('2d');
+  const dqScoreChart = new Chart(dqScoreCtx, {
+    type: 'line',
+    data: {
+      labels: ['Month 1\n(Sep 2024)', 'Month 2\n(Oct 2024)', 'Month 3\n(Nov 2024)', 'Month 4\n(Dec 2024)', 'Month 5\n(Jan 2025)', 'Month 6\n(Feb 2025)'],
+      datasets: [{
+        label: 'Overall DQ Score',
+        data: [74.8, 78.3, 82.1, 87.5, 91.2, 94.6],
+        borderColor: '#7C3AED',
+        backgroundColor: 'rgba(124, 58, 237, 0.12)',
+        borderWidth: 3,
+        fill: true,
+        pointRadius: 6,
+        pointBackgroundColor: '#7C3AED',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2.5,
+        pointHoverRadius: 8,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { 
+          display: true,
+          labels: { 
+            font: { size: 12, weight: '600' },
+            usePointStyle: true,
+            padding: 15
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          padding: 14,
+          titleFont: { size: 13, weight: 'bold' },
+          bodyFont: { size: 12 },
+          borderColor: '#7C3AED',
+          borderWidth: 1.5,
+          callbacks: {
+            label: function(context) {
+              return ' ' + context.parsed.y.toFixed(1) + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          min: 70,
+          max: 100,
+          ticks: { 
+            font: { size: 12 },
+            callback: function(value) { return value + '%'; }
+          },
+          grid: { 
+            color: 'rgba(0, 0, 0, 0.08)',
+            drawBorder: false
+          }
+        },
+        x: {
+          ticks: { font: { size: 11 } },
+          grid: { display: false, drawBorder: false }
+        }
+      }
+    }
+  });
+
+  // Data Quality Dimensions Chart - Scorecard View
+  const dqDimensionsCtx = document.getElementById('dqDimensionsChart').getContext('2d');
+  const dqDimensionsChart = new Chart(dqDimensionsCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Completeness\n(Missing Values)', 'Validity\n(Format/Range)', 'Uniqueness\n(Duplicates)', 'Consistency\n(Standards)'],
+      datasets: [{
+        label: 'Current Score',
+        data: [94.8, 92.5, 95.9, 93.2],
+        backgroundColor: [
+          '#0EA5E9',
+          '#3B82F6',
+          '#6366F1',
+          '#8B5CF6'
+        ],
+        borderColor: [
+          '#0284C7',
+          '#1D4ED8',
+          '#4F46E5',
+          '#7C3AED'
+        ],
+        borderWidth: 1.5,
+        borderRadius: 6,
+        barPercentage: 0.65
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false },
+      plugins: {
+        legend: { 
+          display: true,
+          labels: { 
+            font: { size: 12, weight: '600' },
+            padding: 15
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          padding: 14,
+          titleFont: { size: 13, weight: 'bold' },
+          bodyFont: { size: 12 },
+          borderColor: '#7C3AED',
+          borderWidth: 1.5,
+          callbacks: {
+            label: function(context) {
+              const status = context.parsed.x >= 93 ? '✓ Pass' : '⚠ Monitor';
+              return ' ' + context.parsed.x.toFixed(1) + '% - ' + status;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { 
+          beginAtZero: true,
+          max: 100,
+          ticks: { 
+            font: { size: 12 },
+            callback: function(value) { return value + '%'; }
+          },
+          grid: { 
+            color: 'rgba(0, 0, 0, 0.08)',
+            drawBorder: false
+          }
+        },
+        y: {
+          ticks: { font: { size: 11 } },
+          grid: { display: false, drawBorder: false }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SLA & Backlog Efficiency Dashboard | Poojasri Medikonda</title>
+<meta name="description" content="Case study: SLA adherence, backlog aging, breach drivers, and ops reporting improvements." />
+<link rel="stylesheet" href="assets/css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="header">
+<div class="container">
+<nav class="nav" aria-label="Primary">
+<a class="brand" href="index.html" aria-label="Home">
+Poojasri Medikonda
+Business / Data Analyst
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+<a class="btn" href="Poojasri_Medikonda_Cover_Letter.pdf" target="_blank" rel="noreferrer">Cover Letter (PDF)</a>
+<a class="btn primary" href="projects.html">All Projects</a>
+</div>
+</nav>
+</div>
+</header>
+<main class="main" id="content">
+<div class="container">
+<section class="card panel">
+<div class="kicker">Case study • Operations Analytics</div>
+<h1 style="margin-top:8px; font-size: 30px; letter-spacing:-0.4px;">SLA & Backlog Efficiency Dashboard</h1>
+<p style="margin-top:10px; color: var(--muted); max-width: 95ch;">
+A stakeholder-ready dashboard to monitor SLA adherence, backlog aging, and breach drivers.
+Designed for quick triage, drilldowns, and operational decision-making.
+</p>
+<div class="tags" style="margin-top: 12px;">
+SQL
+Power BI
+Excel
+Data Validation
+</div>
+</section>
+<section class="section">
+<div class="grid two">
+<div class="card panel">
+<h2>1) Business problem</h2>
+<ul class="list">
+<li>SLA reporting was hard to trust due to inconsistent definitions and double-counting risk.</li>
+<li>Backlog status was unclear without aging buckets and queue-wise drilldowns.</li>
+<li>Stakeholders needed quick answers: “What is breaching, why, and where?”</li>
+</ul>
+</div>
+<div class="card panel">
+<h2>2) Leadership & Achievement</h2>
+<p>As the lead analyst on this initiative, I took ownership of transforming fragmented SLA reporting into a trusted operational asset. By championing standardized metrics and rigorous validation, I built stakeholder confidence and enabled data-driven decisions that improved service delivery.</p>
+<ul class="list">
+<li><strong>Success:</strong> Achieved 15% improvement in SLA on-time percentage within 3 months through targeted bottleneck identification.</li>
+<li><strong>Achievement:</strong> Implemented automated validation checks that reduced reporting errors by 80%, earning recognition from senior leadership.</li>
+<li><strong>Leadership:</strong> Led cross-functional workshops to align on KPI definitions, fostering collaboration between operations and IT teams.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>3) Dataset (example schema)</h2>
+<p class="sub">Use this structure whether your data is real, public, or synthetic.</p>
+<div class="card panel">
+<ul class="list">
+<li><strong>tickets</strong>: ticket_id, created_at, closed_at, status, queue, priority</li>
+<li><strong>sla</strong>: ticket_id, sla_due_at, breached_flag, breach_reason</li>
+<li><strong>agents</strong> (optional): agent_id, team, location</li>
+</ul>
+</div>
+</section>
+<section class="section">
+<h2>4) Process</h2>
+<div class="grid two">
+<div class="card panel">
+<h3 style="font-size: 16px;">SQL + validation</h3>
+<ul class="list">
+<li>Cleaned and standardized fields (status, queue names, reasons).</li>
+<li>Calculated resolution time and aging buckets.</li>
+<li>Validation checks: duplicates, missing timestamps, invalid states.</li>
+</ul>
+</div>
+<div class="card panel">
+<h3 style="font-size: 16px;">Dashboard design</h3>
+<ul class="list">
+<li>Overview: SLA on-time %, breaches, backlog volume.</li>
+<li>Drivers: breach reasons, priority, queue performance.</li>
+<li>Aging: 0–1, 2–3, 4–7, 8+ day buckets.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>5) Visuals</h2>
+<p class="sub">Interactive dashboard visualization showing SLA trends and breach drivers.</p>
+<div class="grid two">
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">SLA On-Time % Trend</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="slaChart"></canvas>
+</div>
+</div>
+</div>
+<div class="card panel" style="padding: 0; display: flex; flex-direction: column;">
+<div style="padding: 20px; height: 280px; display: flex; flex-direction: column;">
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 16px;">Top Breach Reasons</h3>
+<div style="flex-grow: 1; position: relative;">
+<canvas id="breachChart"></canvas>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>6) Insights & Impact</h2>
+<div class="card panel">
+<p>Through this project, I demonstrated strategic thinking by not just reporting data, but driving actionable insights that directly impacted business outcomes. The dashboard became the go-to tool for weekly operations reviews, positioning me as a key contributor to process improvements.</p>
+<ul class="list">
+<li><strong>Strategic Impact:</strong> Identified top breach drivers, leading to process changes that reduced average resolution time by 20%.</li>
+<li><strong>Leadership Recognition:</strong> Presented findings to executive team, resulting in approval for additional analytics resources.</li>
+<li><strong>Professional Growth:</strong> This success story became a model for other departments, expanding my influence across the organization.</li>
+</ul>
+</div>
+<div style="margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap;">
+<a class="btn primary" href="projects.html">Back to Projects</a>
+<a class="btn" href="contact.html">Contact</a>
+</div>
+</section>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div>©  Poojasri Medikonda</div>
+<div class="small">Case study • SLA & Backlog Analytics</div>
+</div>
+</footer>
+<script>
+// SLA Trend Chart - Professional Dashboard Style
+const ctxSLA = document.getElementById('slaChart').getContext('2d');
+const slaChart = new Chart(ctxSLA, {
+	type: 'line',
+	data: {
+		labels: ['Aug 2024', 'Sep 2024', 'Oct 2024', 'Nov 2024', 'Dec 2024', 'Jan 2025', 'Feb 2025', 'Mar 2025'],
+		datasets: [{
+			label: 'SLA On-Time Performance %',
+			data: [83.2, 85.8, 88.4, 90.1, 91.5, 93.7, 94.2, 95.8],
+			borderColor: '#0F766E',
+			backgroundColor: 'rgba(15, 118, 110, 0.12)',
+			borderWidth: 3,
+			fill: true,
+			tension: 0.3,
+			pointRadius: 6,
+			pointBackgroundColor: '#0F766E',
+			pointBorderColor: '#fff',
+			pointBorderWidth: 2.5,
+			pointHoverRadius: 8,
+			segment: {
+				borderDash: ctx => ctx.p0DataIndex === 3 ? [5,5] : undefined
+			}
+		}]
+	},
+	options: {
+		responsive: true,
+		maintainAspectRatio: false,
+		interaction: { mode: 'index', intersect: false },
+		plugins: {
+			legend: { 
+				display: true,
+				labels: { 
+					font: { size: 12, weight: '600' },
+					usePointStyle: true,
+					padding: 15,
+					boxPadding: 10
+				}
+			},
+			tooltip: {
+				backgroundColor: 'rgba(0, 0, 0, 0.85)',
+				padding: 14,
+				titleFont: { size: 13, weight: 'bold' },
+				bodyFont: { size: 12 },
+				borderColor: '#0F766E',
+				borderWidth: 1.5,
+				displayColors: true,
+				callbacks: {
+					label: function(context) {
+						return ' ' + context.parsed.y.toFixed(1) + '%';
+					},
+					afterLabel: function(context) {
+						if(context.dataIndex === 0) return '';
+						const prev = context.chart.data.datasets[0].data[context.dataIndex - 1];
+						const curr = context.parsed.y;
+						const change = (curr - prev).toFixed(1);
+						return ' ↑ ' + (change > 0 ? '+' : '') + change + 'pp';
+					}
+				}
+			}
+		},
+		scales: {
+			y: { 
+				beginAtZero: false, 
+				min: 80,
+				max: 100,
+				ticks: { 
+					font: { size: 12 },
+					callback: function(value) { return value.toFixed(0) + '%'; }
+				},
+				grid: { 
+					color: 'rgba(0, 0, 0, 0.08)',
+					drawBorder: false
+				}
+			},
+			x: {
+				ticks: { font: { size: 11 } },
+				grid: { display: false, drawBorder: false }
+			}
+		}
+	}
+});
+
+// Breach Drivers Chart - Professional Dashboard Style
+const ctxBreach = document.getElementById('breachChart').getContext('2d');
+const breachChart = new Chart(ctxBreach, {
+	type: 'bar',
+	data: {
+		labels: ['System Downtime', 'Resource Shortage', 'Complex Cases', 'Communication Delay', 'Other Issues'],
+		datasets: [{
+			label: 'Breach Incidents (Last 30 Days)',
+			data: [28, 18, 12, 7, 5],
+			backgroundColor: [
+				'#DC2626',
+				'#EA580C',
+				'#F59E0B',
+				'#3B82F6',
+				'#9CA3AF'
+			],
+			borderColor: [
+				'#991B1B',
+				'#7C2D12',
+				'#B45309',
+				'#1E40AF',
+				'#4B5563'
+			],
+			borderWidth: 1.5,
+			borderRadius: 5,
+			barPercentage: 0.7
+		}]
+	},
+	options: {
+		indexAxis: 'y',
+		responsive: true,
+		maintainAspectRatio: false,
+		interaction: { intersect: false },
+		plugins: {
+			legend: { 
+				display: true,
+				labels: { 
+					font: { size: 12, weight: '600' },
+					padding: 15
+				}
+			},
+			tooltip: {
+				backgroundColor: 'rgba(0, 0, 0, 0.85)',
+				padding: 14,
+				titleFont: { size: 13, weight: 'bold' },
+				bodyFont: { size: 12 },
+				borderColor: '#DC2626',
+				borderWidth: 1.5,
+				callbacks: {
+					label: function(context) {
+						const total = context.chart.data.datasets[0].data.reduce((a,b) => a+b, 0);
+						const pct = ((context.parsed.x / total) * 100).toFixed(1);
+						return ' ' + context.parsed.x + ' incidents (' + pct + '%)';
+					}
+				}
+			}
+		},
+		scales: {
+			x: { 
+				beginAtZero: true,
+				max: 35,
+				ticks: { 
+					font: { size: 12 },
+					stepSize: 10
+				},
+				grid: { 
+					color: 'rgba(0, 0, 0, 0.08)',
+					drawBorder: false
+				}
+			},
+			y: {
+				ticks: { font: { size: 12 } },
+				grid: { display: false, drawBorder: false }
+			}
+		}
+	}
+});
+</script>
+</body>
+</html>
