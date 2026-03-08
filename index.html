@@ -1,717 +1,573 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+<!doctype html>
 
-:root{
+<html lang="en">
 
---bg: #F6F8FB;
+<head>
 
---surface: #FFFFFF;
+<meta charset="utf-8" />
 
---text: #0F172A;
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
---muted: #64748B;
+<title>Poojasri Medikonda | Data Analyst Portfolio</title>
 
---border: #E2E8F0;
+<meta name="description" content="Business / Data Analyst portfolio: SQL, Python, Power BI, Excel. KPI reporting, data quality, and stakeholder-ready insights." />
 
---teal: #14B8A6;
+<link rel="stylesheet" href="assets/css/style.css" />
 
---teal-2: #0D9488;
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
---shadow-xs: 0 1px 2px rgba(15,23,42,.05);
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
---shadow-sm: 0 6px 18px rgba(15,23,42,.08);
+</head>
 
---radius: 14px;
+<body>
 
---radius-sm: 12px;
+<a class="skip-link" href="#content">Skip to content</a>
 
---max: 1120px;
+<header class="header">
 
---s1: 8px;
+<div class="container">
 
---s2: 12px;
+<nav class="nav" aria-label="Primary">
 
---s3: 16px;
+<a class="brand" href="index.html" aria-label="Home">
 
---s4: 24px;
+Poojasri Medikonda
 
---s5: 32px;
+Business / Data Analyst
 
---s6: 56px;
+</a>
 
---s7: 80px;
+<div class="nav-links">
+
+<a href="index.html" aria-current="page">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="nav-cta">
+
+<a class="btn primary" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+
+<a class="btn" href="#projects">Projects</a>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="main" id="content">
+
+<div class="container">
+
+<!-- HERO (clean SaaS) + mini dashboard preview -->
+
+<section class="hero">
+
+<div>
+
+<div class="kicker">Entry-level (0–2 YoE) • Operations & Finance Analytics</div>
+
+<h1 class="headline">
+
+Turning operational data into decision-ready intelligence through SQL analytics, dashboarding, and automated reporting.
+
+</h1>
+
+<p>
+
+I build KPI dashboards, data-quality checks, and automated reporting workflows.
+
+My focus is clean metric definitions, validation/reconciliation logic, and stakeholder-ready insights.
+
+</p>
+
+<div class="meta">
+
+<i class="fa-solid fa-location-dot"></i> Hyderabad, India
+
+<i class="fa-solid fa-briefcase"></i> Open to Pune & Hyderabad
+
+<i class="fa-solid fa-chart-line"></i> KPI Analytics • Power BI • SQL • Python
+
+</div>
+
+<div style="margin-top: 18px; display:flex; gap: 10px; flex-wrap:wrap;">
+
+<a class="btn primary" href="projects.html">Explore case studies</a>
+
+<a class="btn" href="contact.html">Contact</a>
+
+<a class="btn ghost" href="https://www.linkedin.com/in/poojasree23" target="_blank" rel="noreferrer">
+
+<i class="fab fa-linkedin"></i> LinkedIn
+
+</a>
+
+<a class="btn ghost" href="https://github.com/poojasri234" target="_blank" rel="noreferrer">
+
+<i class="fab fa-github"></i> GitHub
+
+</a>
+
+</div>
+
+<!-- Impact metrics -->
+
+<div class="grid" style="margin-top: 22px;">
+
+<div class="card panel">
+
+<div class="kicker">Impact</div>
+
+<h2 style="margin-top:10px;">80%</h2>
+
+<p class="small">Manual reporting reduced (automation)</p>
+
+</div>
+
+<div class="card panel">
+
+<div class="kicker">Quality</div>
+
+<h2 style="margin-top:10px;">95%</h2>
+
+<p class="small">Data quality score (validation + monitoring)</p>
+
+</div>
+
+<div class="card panel">
+
+<div class="kicker">Speed</div>
+
+<h2 style="margin-top:10px;">25%</h2>
+
+<p class="small">Faster variance detection (monitoring)</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Dashboard preview (uses CSS classes from the teal/slate stylesheet I gave) -->
+
+<aside class="dashboard" aria-label="Dashboard preview">
+
+<div class="dashboard-head">
+
+<div>
+
+<div class="dashboard-title">Dashboard preview</div>
+
+<div class="dashboard-sub">Sample SLA performance (demo data)</div>
+
+</div>
+
+<div class="pill" style="font-size:12px;"><i class="fa-solid fa-circle-check"></i> KPI validated</div>
+
+</div>
+
+<div class="kpi-row">
+
+<div class="kpi">
+
+<div class="label">SLA on-time</div>
+
+<div class="value">96%</div>
+
+<div class="delta">+11 pts</div>
+
+</div>
+
+<div class="kpi">
+
+<div class="label">Breach rate</div>
+
+<div class="value">4%</div>
+
+<div class="delta">-3 pts</div>
+
+</div>
+
+<div class="kpi">
+
+<div class="label">Backlog</div>
+
+<div class="value">1,280</div>
+
+<div class="delta">-8%</div>
+
+</div>
+
+</div>
+
+<div class="chart-wrap">
+
+<div class="chart-box">
+
+<canvas id="kpiChart"></canvas>
+
+</div>
+
+</div>
+
+<div style="padding: 0 16px 16px 16px; display:flex; gap: 10px; flex-wrap:wrap;">
+
+<a class="btn primary" href="projects.html">View projects</a>
+
+<a class="btn" href="contact.html">Contact</a>
+
+</div>
+
+<hr class="sep" />
+
+<div style="padding: 0 16px 16px 16px;">
+
+<h2 style="font-size:16px;">Quick info</h2>
+
+<p class="sub">Fast ways to reach or verify.</p>
+
+<div style="margin-top: 12px; display:flex; flex-direction:column; gap: 10px;">
+
+<div class="pill">
+
+<i class="fa-solid fa-envelope"></i>
+
+<a href="[mailto:poojasrimedikonda@gmail.com">poojasrimedikonda@gmail.com</a>](mailto:poojasrimedikonda@gmail.com">poojasrimedikonda@gmail.com</a>)
+
+</div>
+
+<div class="pill"><i class="fa-solid fa-phone"></i> +91 9391727565</div>
+
+<div class="pill"><i class="fa-brands fa-linkedin"></i> /in/poojasree23</div>
+
+</div>
+
+</div>
+
+</aside>
+
+</section>
+
+<!-- Dashboard Visualizations -->
+
+<section class="section">
+
+<h2>Dashboard visualizations</h2>
+
+<p class="sub">Representative dashboard previews (use sanitized screenshots or a public embed).</p>
+
+<div class="grid">
+
+<article class="card panel">
+
+<h3>SLA Performance Dashboard</h3>
+
+<div class="thumb" style="margin-top:12px;">Add screenshot: assets/img/sla-dashboard.png</div>
+
+<p class="small" style="margin-top:10px;">SLA monitoring with drilldowns for teams, queues, and breach reasons.</p>
+
+</article>
+
+<article class="card panel">
+
+<h3>Data Quality Scorecard</h3>
+
+<div class="thumb" style="margin-top:12px;">Add screenshot: assets/img/dq-dashboard.png</div>
+
+<p class="small" style="margin-top:10px;">Validation rules, reconciliation checks, and monitoring over time.</p>
+
+</article>
+
+<article class="card panel">
+
+<h3>Financial Variance Dashboard</h3>
+
+<div class="thumb" style="margin-top:12px;">Add screenshot: assets/img/finance-dashboard.png</div>
+
+<p class="small" style="margin-top:10px;">Variance detection by category, period, and cost drivers.</p>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- Education & Certifications -->
+
+<section class="section">
+
+<h2>Education & Certifications</h2>
+
+<div class="grid two">
+
+<div class="card panel">
+
+<h3>Education</h3>
+
+<ul class="list">
+
+<li><i class="fas fa-graduation-cap"></i> <strong>[B.Tech](http://B.Tech) – Information Technology</strong></li>
+
+<li><i class="fas fa-university"></i> JNTU | 2019 – 2023</li>
+
+</ul>
+
+</div>
+
+<div class="card panel">
+
+<h3>Certifications</h3>
+
+<ul class="list">
+
+<li><i class="fas fa-certificate"></i> Data Analytics Certification — Frontlines Media</li>
+
+<li><i class="fas fa-certificate"></i> Data Analytics Essentials — Cisco Networking Academy</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Featured case studies -->
+
+<section class="section" id="projects">
+
+<h2>Featured case studies</h2>
+
+<p class="sub">Business problem → approach → impact (focused on metrics + stakeholder outcomes).</p>
+
+<div class="grid">
+
+<article class="card panel project-card">
+
+<h3>SLA & Backlog Efficiency Dashboard</h3>
+
+<p class="small" style="margin-top:8px;">
+
+Outcome: Real-time SLA visibility with drilldowns to reduce breaches and unblock operations.
+
+</p>
+
+<ul class="list" style="margin-top:12px;">
+
+<li><i class="fas fa-check-circle"></i> 15% SLA improvement</li>
+
+<li><i class="fas fa-bolt"></i> 80% reporting automation</li>
+
+<li><i class="fas fa-search"></i> Faster breach detection and escalation</li>
+
+</ul>
+
+<div class="tags">
+
+SQL
+
+Power BI
+
+ETL
+
+</div>
+
+<div class="actions">
+
+<a class="btn primary" href="project-sla.html">View case study</a>
+
+</div>
+
+</article>
+
+<article class="card panel project-card">
+
+<h3>Data Quality & Governance Scorecard</h3>
+
+<p class="small" style="margin-top:8px;">
+
+Outcome: Trustworthy reporting via validation rules + automated checks.
+
+</p>
+
+<ul class="list" style="margin-top:12px;">
+
+<li><i class="fas fa-shield-alt"></i> Quality score improved from 75% → 95%</li>
+
+<li><i class="fas fa-robot"></i> Automated validation + monitoring</li>
+
+<li><i class="fas fa-triangle-exclamation"></i> Reduced reporting errors</li>
+
+</ul>
+
+<div class="tags">
+
+SQL
+
+Python
+
+Automation
+
+</div>
+
+<div class="actions">
+
+<a class="btn primary" href="project-dq.html">View case study</a>
+
+</div>
+
+</article>
+
+<article class="card panel project-card">
+
+<h3>Financial Performance Monitoring + Variance Analysis</h3>
+
+<p class="small" style="margin-top:8px;">
+
+Outcome: Faster variance detection to support cost control decisions.
+
+</p>
+
+<ul class="list" style="margin-top:12px;">
+
+<li><i class="fas fa-chart-line"></i> 25% faster variance detection</li>
+
+<li><i class="fas fa-layer-group"></i> Multi-level variance drilldowns</li>
+
+<li><i class="fas fa-file-lines"></i> Automated reporting output</li>
+
+</ul>
+
+<div class="tags">
+
+SQL
+
+Power BI
+
+Finance
+
+</div>
+
+<div class="actions">
+
+<a class="btn primary" href="project-finance.html">View case study</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="container">
+
+<div>©  Poojasri Medikonda</div>
+
+<div class="small">Data Analytics Portfolio • SQL • Python • Power BI • Data Visualization</div>
+
+<div class="social-links">
+
+<a href="https://www.linkedin.com/in/poojasree23" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+
+<a href="https://github.com/poojasri234" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+
+<a href="[mailto:poojasrimedikonda@gmail.com](mailto:poojasrimedikonda@gmail.com)" aria-label="Email"><i class="fas fa-envelope"></i></a>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const ctx = document.getElementById('kpiChart').getContext('2d');
+
+new Chart(ctx, {
+
+type: 'line',
+
+data: {
+
+labels: ['Aug','Sep','Oct','Nov','Dec','Jan'],
+
+datasets: [{
+
+label: 'SLA On-time %',
+
+data: [85, 88, 92, 90, 94, 96],
+
+borderColor: '#0D9488',
+
+backgroundColor: 'rgba(20,184,166,0.14)',
+
+fill: true,
+
+tension: 0.35,
+
+pointRadius: 0,
+
+borderWidth: 2
+
+}]
+
+},
+
+options: {
+
+responsive: true,
+
+maintainAspectRatio: false,
+
+plugins: {
+
+legend: { display: false },
+
+tooltip: { mode: 'index', intersect: false }
+
+},
+
+scales: {
+
+x: { grid: { display: false } },
+
+y: {
+
+min: 80,
+
+max: 100,
+
+ticks: { stepSize: 5 }
 
 }
 
-*{ box-sizing:border-box; margin:0; padding:0; }
-
-body{
-
-font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
-color: var(--text);
-
-line-height: 1.6;
-
-background: var(--bg);
-
--webkit-font-smoothing: antialiased;
-
--moz-osx-font-smoothing: grayscale;
+}
 
 }
 
-a{ color: var(--teal-2); text-decoration:none; }
+});
 
-a:hover{ text-decoration: underline; }
+</script>
 
-.container{
+</body>
 
-max-width: var(--max);
-
-margin: 0 auto;
-
-padding: 0 var(--s4);
-
-}
-
-/ *Accessibility* /
-
-.skip-link{
-
-position:absolute;
-
-left:-999px;
-
-top:auto;
-
-width:1px;
-
-height:1px;
-
-overflow:hidden;
-
-}
-
-.skip-link:focus{
-
-left: var(--s4);
-
-top: var(--s4);
-
-width:auto;
-
-height:auto;
-
-padding: 10px 12px;
-
-background: var(--surface);
-
-border: 1px solid var(--border);
-
-border-radius: 12px;
-
-box-shadow: var(--shadow-sm);
-
-z-index: 9999;
-
-}
-
-/ *Header (clean, minimal)* /
-
-.header{
-
-position: sticky;
-
-top: 0;
-
-z-index: 50;
-
-background: rgba(255,255,255,.9);
-
-border-bottom: 1px solid rgba(226,232,240,.85);
-
-}
-
-.nav{
-
-display:flex;
-
-align-items:center;
-
-justify-content: space-between;
-
-padding: 14px 0;
-
-gap: var(--s3);
-
-}
-
-.brand{
-
-display:flex;
-
-flex-direction:column;
-
-line-height:1.1;
-
-}
-
-.brand .name{
-
-font-weight: 800;
-
-letter-spacing: -0.2px;
-
-color: var(--text);
-
-}
-
-.brand .role{
-
-color: var(--muted);
-
-font-size: 13px;
-
-margin-top: 4px;
-
-}
-
-.nav-links{
-
-display:flex;
-
-gap: var(--s2);
-
-flex-wrap: wrap;
-
-align-items:center;
-
-}
-
-.nav-links a{
-
-color: var(--text);
-
-font-weight: 650;
-
-padding: 8px 10px;
-
-border-radius: 10px;
-
-}
-
-.nav-links a[aria-current="page"]{
-
-background: #F8FAFC;
-
-border: 1px solid var(--border);
-
-text-decoration: none;
-
-}
-
-.nav-cta{
-
-display:flex;
-
-gap: var(--s2);
-
-align-items:center;
-
-flex-wrap: wrap;
-
-justify-content: flex-end;
-
-}
-
-/ *Buttons* /
-
-.btn{
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap: 8px;
-
-padding: 10px 14px;
-
-border-radius: 12px;
-
-border: 1px solid var(--border);
-
-background: var(--surface);
-
-color: var(--text);
-
-font-weight: 700;
-
-cursor: pointer;
-
-text-decoration: none;
-
-box-shadow: var(--shadow-xs);
-
-transition: background .15s ease, border-color .15s ease, transform .08s ease;
-
-}
-
-.btn:hover{ text-decoration:none; }
-
-.btn:active{ transform: translateY(1px); }
-
-.btn.primary{
-
-background: var(--teal);
-
-border-color: rgba(20,184,166,.35);
-
-color: #062a27;
-
-}
-
-.btn.primary:hover{
-
-background: var(--teal-2);
-
-border-color: rgba(13,148,136,.35);
-
-color: #ecfeff;
-
-}
-
-.btn.ghost{
-
-background: transparent;
-
-box-shadow: none;
-
-}
-
-.btn.ghost:hover{
-
-background: rgba(15,23,42,.04);
-
-border-color: rgba(15,23,42,.10);
-
-}
-
-/ *Layout spacing* /
-
-.main{ padding: var(--s6) 0; }
-
-/ *Sections like LottieFiles* /
-
-.section{ margin-top: var(--s7); }
-
-.section h2{
-
-font-size: 22px;
-
-letter-spacing: -0.3px;
-
-}
-
-.section .sub{
-
-margin-top: 10px;
-
-color: var(--muted);
-
-max-width: 72ch;
-
-}
-
-/ *Grid* /
-
-.grid{
-
-display:grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap: var(--s4);
-
-margin-top: var(--s4);
-
-}
-
-.grid.two{ grid-template-columns: repeat(2, 1fr); }
-
-/ *Cards: dashboard-like* /
-
-.card{
-
-background: var(--surface);
-
-border: 1px solid var(--border);
-
-border-radius: var(--radius);
-
-box-shadow: var(--shadow-xs);
-
-}
-
-.panel{ padding: 18px; }
-
-/ *Hero: subtle gradient + clean* /
-
-.hero{
-
-margin-top: 10px;
-
-padding: 34px;
-
-border-radius: 22px;
-
-border: 1px solid rgba(226,232,240,.8);
-
-background:
-
-radial-gradient(900px 420px at 10% -10%, rgba(20,184,166,.16), transparent 55%),
-
-radial-gradient(900px 420px at 90% -10%, rgba(56,189,248,.14), transparent 55%),
-
-#FFFFFF;
-
-display:grid;
-
-grid-template-columns: 1.2fr .8fr;
-
-gap: 28px;
-
-align-items: start;
-
-}
-
-.kicker{
-
-color: rgba(13,148,136,.95);
-
-font-weight: 800;
-
-letter-spacing: .5px;
-
-text-transform: uppercase;
-
-font-size: 12px;
-
-}
-
-.headline{
-
-margin-top: 10px;
-
-font-size: 42px;
-
-line-height: 1.1;
-
-letter-spacing: -0.8px;
-
-}
-
-.hero p{
-
-margin-top: 14px;
-
-color: var(--muted);
-
-font-size: 16.5px;
-
-max-width: 72ch;
-
-}
-
-.meta{
-
-margin-top: 16px;
-
-display:flex;
-
-gap: 10px;
-
-flex-wrap: wrap;
-
-color: var(--muted);
-
-font-size: 14px;
-
-}
-
-.pill{
-
-display:inline-flex;
-
-align-items:center;
-
-gap: 8px;
-
-padding: 8px 10px;
-
-border: 1px solid rgba(226,232,240,.9);
-
-background: rgba(255,255,255,.7);
-
-border-radius: 999px;
-
-}
-
-/ *Dashboard preview panel (Shards-like)* /
-
-.dashboard{
-
-border-radius: 18px;
-
-background: rgba(255,255,255,.85);
-
-border: 1px solid rgba(226,232,240,.95);
-
-box-shadow: var(--shadow-sm);
-
-overflow: hidden;
-
-}
-
-.dashboard-head{
-
-padding: 14px 16px;
-
-border-bottom: 1px solid rgba(226,232,240,.9);
-
-display:flex;
-
-align-items:center;
-
-justify-content: space-between;
-
-gap: 10px;
-
-}
-
-.dashboard-title{
-
-font-weight: 800;
-
-letter-spacing: -0.2px;
-
-}
-
-.dashboard-sub{
-
-color: var(--muted);
-
-font-size: 12.5px;
-
-}
-
-.kpi-row{
-
-display:grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap: 12px;
-
-padding: 12px 16px 0 16px;
-
-}
-
-.kpi{
-
-border: 1px solid rgba(226,232,240,.95);
-
-border-radius: 14px;
-
-padding: 12px;
-
-background: #FFFFFF;
-
-}
-
-.kpi .label{
-
-font-size: 12px;
-
-color: var(--muted);
-
-font-weight: 700;
-
-}
-
-.kpi .value{
-
-margin-top: 6px;
-
-font-size: 20px;
-
-font-weight: 900;
-
-letter-spacing: -0.4px;
-
-}
-
-.kpi .delta{
-
-margin-top: 4px;
-
-font-size: 12px;
-
-font-weight: 700;
-
-color: var(--teal-2);
-
-}
-
-.chart-wrap{
-
-padding: 10px 16px 16px 16px;
-
-}
-
-.chart-box{
-
-height: 240px;
-
-border: 1px solid rgba(226,232,240,.95);
-
-border-radius: 14px;
-
-background: #FFFFFF;
-
-padding: 10px;
-
-}
-
-/ *Lists/tags* /
-
-.list{
-
-margin-top: 12px;
-
-display:flex;
-
-flex-direction: column;
-
-gap: 10px;
-
-}
-
-.list li{
-
-margin-left: 0;
-
-display: flex;
-
-align-items: center;
-
-gap: 10px;
-
-color: var(--muted);
-
-}
-
-.list li i{
-
-color: var(--teal-2);
-
-width: 20px;
-
-}
-
-.tags{
-
-display:flex;
-
-flex-wrap: wrap;
-
-gap: 8px;
-
-margin-top: 12px;
-
-}
-
-.tag{
-
-font-size: 12px;
-
-font-weight: 800;
-
-color: rgba(13,148,136,.95);
-
-background: rgba(20,184,166,.10);
-
-border: 1px solid rgba(20,184,166,.18);
-
-padding: 6px 10px;
-
-border-radius: 999px;
-
-}
-
-.small{ color: var(--muted); font-size: 13px; }
-
-hr.sep{
-
-border: none;
-
-border-top: 1px solid rgba(226,232,240,.9);
-
-margin: var(--s5) 0;
-
-}
-
-/ *Footer* /
-
-.footer{
-
-border-top: 1px solid rgba(226,232,240,.9);
-
-padding: var(--s6) 0;
-
-color: var(--muted);
-
-font-size: 14px;
-
-text-align: center;
-
-}
-
-.footer .social-links{
-
-margin-top: 12px;
-
-display: flex;
-
-justify-content: center;
-
-gap: 16px;
-
-}
-
-.footer .social-links a{
-
-color: var(--muted);
-
-font-size: 18px;
-
-}
-
-.footer .social-links a:hover{ color: var(--teal-2); }
-
-/ *Responsive* /
-
-@media (max-width: 980px){
-
-.hero{ grid-template-columns: 1fr; padding: 22px; }
-
-.headline{ font-size: 34px; }
-
-.grid{ grid-template-columns: 1fr; }
-
-.grid.two{ grid-template-columns: 1fr; }
-
-.kpi-row{ grid-template-columns: 1fr; }
-
-}
+</html>
