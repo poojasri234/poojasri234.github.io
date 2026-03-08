@@ -68,8 +68,6 @@ Business / Data Analyst
 
 <div class="container">
 
-<!-- HERO (clean SaaS) + mini dashboard preview -->
-
 <section class="hero">
 
 <div>
@@ -120,8 +118,6 @@ My focus is clean metric definitions, validation/reconciliation logic, and stake
 
 </div>
 
-<!-- Impact metrics -->
-
 <div class="grid" style="margin-top: 22px;">
 
 <div class="card panel">
@@ -157,8 +153,6 @@ My focus is clean metric definitions, validation/reconciliation logic, and stake
 </div>
 
 </div>
-
-<!-- Dashboard preview (uses CSS classes from the teal/slate stylesheet I gave) -->
 
 <aside class="dashboard" aria-label="Dashboard preview">
 
@@ -228,37 +222,9 @@ My focus is clean metric definitions, validation/reconciliation logic, and stake
 
 </div>
 
-<hr class="sep" />
-
-<div style="padding: 0 16px 16px 16px;">
-
-<h2 style="font-size:16px;">Quick info</h2>
-
-<p class="sub">Fast ways to reach or verify.</p>
-
-<div style="margin-top: 12px; display:flex; flex-direction:column; gap: 10px;">
-
-<div class="pill">
-
-<i class="fa-solid fa-envelope"></i>
-
-<a href="[mailto:poojasrimedikonda@gmail.com">poojasrimedikonda@gmail.com</a>](mailto:poojasrimedikonda@gmail.com">poojasrimedikonda@gmail.com</a>)
-
-</div>
-
-<div class="pill"><i class="fa-solid fa-phone"></i> +91 9391727565</div>
-
-<div class="pill"><i class="fa-brands fa-linkedin"></i> /in/poojasree23</div>
-
-</div>
-
-</div>
-
 </aside>
 
 </section>
-
-<!-- Dashboard Visualizations -->
 
 <section class="section">
 
@@ -302,48 +268,6 @@ My focus is clean metric definitions, validation/reconciliation logic, and stake
 
 </section>
 
-<!-- Education & Certifications -->
-
-<section class="section">
-
-<h2>Education & Certifications</h2>
-
-<div class="grid two">
-
-<div class="card panel">
-
-<h3>Education</h3>
-
-<ul class="list">
-
-<li><i class="fas fa-graduation-cap"></i> <strong>[B.Tech](http://B.Tech) – Information Technology</strong></li>
-
-<li><i class="fas fa-university"></i> JNTU | 2019 – 2023</li>
-
-</ul>
-
-</div>
-
-<div class="card panel">
-
-<h3>Certifications</h3>
-
-<ul class="list">
-
-<li><i class="fas fa-certificate"></i> Data Analytics Certification — Frontlines Media</li>
-
-<li><i class="fas fa-certificate"></i> Data Analytics Essentials — Cisco Networking Academy</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Featured case studies -->
-
 <section class="section" id="projects">
 
 <h2>Featured case studies</h2>
@@ -356,11 +280,7 @@ My focus is clean metric definitions, validation/reconciliation logic, and stake
 
 <h3>SLA & Backlog Efficiency Dashboard</h3>
 
-<p class="small" style="margin-top:8px;">
-
-Outcome: Real-time SLA visibility with drilldowns to reduce breaches and unblock operations.
-
-</p>
+<p class="small" style="margin-top:8px;">Outcome: Real-time SLA visibility with drilldowns to reduce breaches and unblock operations.</p>
 
 <ul class="list" style="margin-top:12px;">
 
@@ -374,15 +294,11 @@ Outcome: Real-time SLA visibility with drilldowns to reduce breaches and unblock
 
 <div class="tags">
 
-SQL
-
-Power BI
-
-ETL
+SQLPower BIETL
 
 </div>
 
-<div class="actions">
+<div class="actions" style="margin-top:14px;">
 
 <a class="btn primary" href="project-sla.html">View case study</a>
 
@@ -394,11 +310,7 @@ ETL
 
 <h3>Data Quality & Governance Scorecard</h3>
 
-<p class="small" style="margin-top:8px;">
-
-Outcome: Trustworthy reporting via validation rules + automated checks.
-
-</p>
+<p class="small" style="margin-top:8px;">Outcome: Trustworthy reporting via validation rules + automated checks.</p>
 
 <ul class="list" style="margin-top:12px;">
 
@@ -412,15 +324,11 @@ Outcome: Trustworthy reporting via validation rules + automated checks.
 
 <div class="tags">
 
-SQL
-
-Python
-
-Automation
+SQLPythonAutomation
 
 </div>
 
-<div class="actions">
+<div class="actions" style="margin-top:14px;">
 
 <a class="btn primary" href="project-dq.html">View case study</a>
 
@@ -432,11 +340,7 @@ Automation
 
 <h3>Financial Performance Monitoring + Variance Analysis</h3>
 
-<p class="small" style="margin-top:8px;">
-
-Outcome: Faster variance detection to support cost control decisions.
-
-</p>
+<p class="small" style="margin-top:8px;">Outcome: Faster variance detection to support cost control decisions.</p>
 
 <ul class="list" style="margin-top:12px;">
 
@@ -450,15 +354,11 @@ Outcome: Faster variance detection to support cost control decisions.
 
 <div class="tags">
 
-SQL
-
-Power BI
-
-Finance
+SQLPower BIFinance
 
 </div>
 
-<div class="actions">
+<div class="actions" style="margin-top:14px;">
 
 <a class="btn primary" href="project-finance.html">View case study</a>
 
@@ -538,27 +438,13 @@ responsive: true,
 
 maintainAspectRatio: false,
 
-plugins: {
-
-legend: { display: false },
-
-tooltip: { mode: 'index', intersect: false }
-
-},
+plugins: { legend: { display: false } },
 
 scales: {
 
 x: { grid: { display: false } },
 
-y: {
-
-min: 80,
-
-max: 100,
-
-ticks: { stepSize: 5 }
-
-}
+y: { min: 80, max: 100, ticks: { stepSize: 5 } }
 
 }
 
