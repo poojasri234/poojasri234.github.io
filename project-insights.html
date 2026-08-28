@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Customer Segmentation & Business Insights | Poojasri Medikonda</title>
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<style>
+		.qbox { background:#0f172a; color:#e2e8f0; border-radius:10px; padding:16px; overflow-x:auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height:1.6; margin-top:10px; }
+		.workflow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:16px; }
+		.workflow .step { background: var(--panel, #fff); border:1px solid var(--border, #e5e7eb); border-radius:10px; padding:10px 14px; font-size:13px; font-weight:600; }
+		.workflow .arrow { color: var(--muted); }
+		.datatable { width:100%; border-collapse: collapse; margin-top:10px; font-size: 14px; }
+		.datatable th, .datatable td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border, #e5e7eb); }
+	</style>
+</head>
+<body>
+	<a class="skip-link" href="#content">Skip to content</a>
+	<header class="header">
+		<div class="container">
+			<nav class="nav" aria-label="Primary">
+				<a class="brand" href="index.html" aria-label="Home">
+					Poojasri Medikonda
+					Data Analyst
+				</a>
+				<div class="nav-links">
+					<a href="index.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="projects.html" aria-current="page">Projects</a>
+					<a href="skills.html">Skills</a>
+					<a href="contact.html">Contact</a>
+				</div>
+				<div class="nav-cta">
+					<a class="btn primary" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main" id="content">
+		<div class="container">
+			<a class="btn" href="projects.html" style="margin-bottom:16px; display:inline-flex;"><i class="fas fa-arrow-left"></i> All projects</a>
+
+			<section class="card panel">
+				<div class="tags">SQL • Python • Power BI • Generative AI-assisted analysis</div>
+				<h1 style="font-size: 26px; margin-top:10px;">Customer Segmentation & Business Insights</h1>
+				<p style="margin-top: 10px; color: var(--muted);">
+					A segmentation-focused analysis of customer transaction and feedback data to identify purchasing
+					patterns, customer segments, and KPI changes.
+				</p>
+				<p class="small" style="margin-top:12px;">
+					<strong>Dataset:</strong> Customer transaction & feedback data &nbsp;•&nbsp;
+					<strong>Tools:</strong> SQL, Python, Power BI &nbsp;•&nbsp;
+					<strong>Focus:</strong> Segmentation, Purchase Behavior, KPI Analysis
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>1. Business problem</h2>
+				<div class="card panel">
+					<p class="small">
+						The objective was to understand how customers differ in purchasing behavior and value, so
+						the business can prioritize retention and marketing effort toward the segments that matter most.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>2. Business questions</h2>
+				<div class="card panel">
+					<ul class="list">
+						<li><i class="fas fa-question"></i> How do customers group by purchasing behavior?</li>
+						<li><i class="fas fa-question"></i> Which customers purchase most frequently?</li>
+						<li><i class="fas fa-question"></i> Which customers generate the most value?</li>
+						<li><i class="fas fa-question"></i> What share of customers are repeat buyers?</li>
+						<li><i class="fas fa-question"></i> How does purchase behavior trend over time?</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>3. Dataset overview</h2>
+				<div class="card panel">
+					<table class="datatable">
+						<tr><th>Field</th><th>Description</th></tr>
+						<tr><td>Customer ID</td><td>Unique customer identifier</td></tr>
+						<tr><td>Order Date</td><td>Date of transaction</td></tr>
+						<tr><td>Order Value</td><td>Revenue from the transaction</td></tr>
+						<tr><td>Product / Category</td><td>What was purchased</td></tr>
+						<tr><td>Feedback Score</td><td>Customer feedback rating, where available</td></tr>
+					</table>
+					<div class="thumb" style="margin-top:14px;">Add: record count, date range, missing values found, duplicates removed</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>4. Data preparation (Python)</h2>
+				<div class="card panel">
+					<p class="small">Preparation with Pandas included:</p>
+					<ul class="list" style="margin-top:10px;">
+						<li><i class="fas fa-check"></i> Handled missing values and inconsistent fields</li>
+						<li><i class="fas fa-check"></i> Removed duplicate transaction records</li>
+						<li><i class="fas fa-check"></i> Checked and treated basic outliers in order value</li>
+						<li><i class="fas fa-check"></i> Built per-customer aggregates (recency, frequency, monetary value)</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>5. SQL analysis</h2>
+				<div class="card panel">
+					<p class="small"><strong>Purpose:</strong> Calculate recency, frequency, and monetary value per customer (RFM).</p>
+					<div class="qbox">SELECT
+    customer_id,
+    MAX(order_date) AS last_order_date,
+    COUNT(*) AS frequency,
+    SUM(order_value) AS monetary_value
+FROM orders
+GROUP BY customer_id;</div>
+				</div>
+				<div class="card panel" style="margin-top:14px;">
+					<p class="small"><strong>Purpose:</strong> Rank customers into value tiers using a window function.</p>
+					<div class="qbox">SELECT
+    customer_id,
+    monetary_value,
+    NTILE(4) OVER (ORDER BY monetary_value DESC) AS value_tier
+FROM customer_summary;</div>
+				</div>
+				<div class="card panel" style="margin-top:14px;">
+					<p class="small"><strong>Purpose:</strong> Identify repeat vs. one-time customers.</p>
+					<div class="qbox">SELECT
+    CASE WHEN frequency > 1 THEN 'Repeat' ELSE 'One-time' END AS customer_type,
+    COUNT(*) AS customers
+FROM customer_summary
+GROUP BY customer_type;</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>6. KPI analysis</h2>
+				<div class="grid">
+					<div class="card panel"><div class="kicker">Total Customers</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Repeat Customer Rate</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Avg. Purchase Frequency</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Avg. Customer Value</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+				</div>
+				<p class="small" style="margin-top:10px; color: var(--muted);">KPI values should come directly from the dataset — add them once calculated. If RFM segmentation was used, name the resulting segments here (e.g. Champions, Loyal, At-Risk) only if genuinely calculated.</p>
+			</section>
+
+			<section class="section">
+				<h2>7. AI-assisted workflow</h2>
+				<div class="card panel">
+					<p class="small">
+						Generative AI was used as a supporting analytical tool for brainstorming investigation paths,
+						summarizing validated findings, and improving business-facing explanations. All calculations
+						and conclusions were verified against SQL/Python analysis before being included in the final
+						report.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>8. Power BI dashboard</h2>
+				<div class="card panel">
+					<div class="thumb" style="min-height:220px;">Power BI dashboard screenshot coming soon</div>
+					<p class="small" style="margin-top:12px;">Dashboard includes:</p>
+					<ul class="list" style="margin-top:8px;">
+						<li><i class="fas fa-layer-group"></i> Customer segment breakdown</li>
+						<li><i class="fas fa-repeat"></i> Repeat customer rate</li>
+						<li><i class="fas fa-chart-line"></i> Purchase frequency trend</li>
+						<li><i class="fas fa-sack-dollar"></i> Customer value by segment</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>9. Key insights</h2>
+				<div class="card panel">
+					<div class="thumb" style="min-height:100px;">Add key findings once verified — e.g. which segment drives the most value, or how repeat-purchase rate compares across segments.</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>10. Business recommendations</h2>
+				<div class="card panel">
+					<p class="small">Based on the analysis, the following actions could be considered:</p>
+					<ul class="list" style="margin-top:10px;">
+						<li><i class="fas fa-lightbulb"></i> Prioritize retention efforts on the highest-value customer segment.</li>
+						<li><i class="fas fa-lightbulb"></i> Design re-engagement campaigns for at-risk or lapsing segments.</li>
+						<li><i class="fas fa-lightbulb"></i> Test personalized offers for one-time buyers to encourage repeat purchase.</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>11. Technical workflow</h2>
+				<div class="card panel">
+					<div class="workflow">
+						<div class="step">Raw Dataset</div><span class="arrow">→</span>
+						<div class="step">Python Cleaning</div><span class="arrow">→</span>
+						<div class="step">SQL / RFM Analysis</div><span class="arrow">→</span>
+						<div class="step">Data Model</div><span class="arrow">→</span>
+						<div class="step">Power BI</div><span class="arrow">→</span>
+						<div class="step">AI-Assisted Summary</div><span class="arrow">→</span>
+						<div class="step">KPIs & Insights</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>12. Tools & technologies</h2>
+				<div class="card panel">
+					<div class="tags">SQL • Python • Power BI • Generative AI (supporting tool)</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>13. GitHub repository</h2>
+				<div class="card panel">
+					<a class="btn primary" href="https://github.com/poojasri234" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> Add link to this project's repository</a>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="card panel" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+					<div>
+						<h3 style="font-size:18px;">Back to all projects</h3>
+						<p class="small" style="margin-top:6px;">See every case study on one page.</p>
+					</div>
+					<a class="btn primary" href="projects.html">View projects</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div>© <span id="year"></span> Poojasri Medikonda</div>
+			<div class="small">Data Analyst | Business Analyst • SQL • Power BI • Excel • Python</div>
+			<div class="social-links">
+				<a href="https://www.linkedin.com/in/poojasree23" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+				<a href="https://github.com/poojasri234" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+				<a href="mailto:poojasrimedikonda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

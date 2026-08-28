@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Customer Churn Analysis | Poojasri Medikonda</title>
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<style>
+		.qbox { background:#0f172a; color:#e2e8f0; border-radius:10px; padding:16px; overflow-x:auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height:1.6; margin-top:10px; }
+		.workflow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:16px; }
+		.workflow .step { background: var(--panel, #fff); border:1px solid var(--border, #e5e7eb); border-radius:10px; padding:10px 14px; font-size:13px; font-weight:600; }
+		.workflow .arrow { color: var(--muted); }
+		.datatable { width:100%; border-collapse: collapse; margin-top:10px; font-size: 14px; }
+		.datatable th, .datatable td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--border, #e5e7eb); }
+	</style>
+</head>
+<body>
+	<a class="skip-link" href="#content">Skip to content</a>
+	<header class="header">
+		<div class="container">
+			<nav class="nav" aria-label="Primary">
+				<a class="brand" href="index.html" aria-label="Home">
+					Poojasri Medikonda
+					Data Analyst
+				</a>
+				<div class="nav-links">
+					<a href="index.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="projects.html" aria-current="page">Projects</a>
+					<a href="skills.html">Skills</a>
+					<a href="contact.html">Contact</a>
+				</div>
+				<div class="nav-cta">
+					<a class="btn primary" href="Poojasri_Medikonda_Business_Data_Analyst_Resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main" id="content">
+		<div class="container">
+			<a class="btn" href="projects.html" style="margin-bottom:16px; display:inline-flex;"><i class="fas fa-arrow-left"></i> All projects</a>
+
+			<section class="card panel">
+				<div class="tags">Python • SQL • Power BI</div>
+				<h1 style="font-size: 26px; margin-top:10px;">Customer Churn Analysis</h1>
+				<p style="margin-top: 10px; color: var(--muted);">
+					An analysis of customer data to understand which characteristics and behaviors are associated
+					with churn, and which segments are most at risk of leaving.
+				</p>
+				<p class="small" style="margin-top:12px;">
+					<strong>Dataset:</strong> Customer account & usage data &nbsp;•&nbsp;
+					<strong>Tools:</strong> Python, SQL, Power BI &nbsp;•&nbsp;
+					<strong>Focus:</strong> Churn Analysis, Segmentation, EDA
+				</p>
+			</section>
+
+			<section class="section">
+				<h2>1. Business problem</h2>
+				<div class="card panel">
+					<p class="small">
+						The objective was to understand which customer characteristics and behaviors are associated
+						with churn, so the business can identify at-risk segments earlier and prioritize retention
+						efforts.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>2. Business questions</h2>
+				<div class="card panel">
+					<ul class="list">
+						<li><i class="fas fa-question"></i> What is the overall churn rate?</li>
+						<li><i class="fas fa-question"></i> How does churn vary by contract type?</li>
+						<li><i class="fas fa-question"></i> How does churn vary by customer tenure?</li>
+						<li><i class="fas fa-question"></i> How does churn vary by service type?</li>
+						<li><i class="fas fa-question"></i> How does churn vary by payment method?</li>
+						<li><i class="fas fa-question"></i> What does the customer tenure distribution look like?</li>
+						<li><i class="fas fa-question"></i> How do monthly charges relate to churn?</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>3. Dataset overview</h2>
+				<div class="card panel">
+					<table class="datatable">
+						<tr><th>Field</th><th>Description</th></tr>
+						<tr><td>Customer ID</td><td>Unique customer identifier</td></tr>
+						<tr><td>Tenure</td><td>Months as a customer</td></tr>
+						<tr><td>Contract</td><td>Contract type (month-to-month, 1-year, 2-year)</td></tr>
+						<tr><td>Payment Method</td><td>How the customer pays</td></tr>
+						<tr><td>Monthly Charges</td><td>Recurring monthly charge</td></tr>
+						<tr><td>Services</td><td>Subscribed services</td></tr>
+						<tr><td>Churn</td><td>Whether the customer churned (Yes/No)</td></tr>
+					</table>
+					<div class="thumb" style="margin-top:14px;">Add: record count, date range, missing values found, duplicates removed</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>4. Data preparation (Python)</h2>
+				<div class="card panel">
+					<p class="small">Cleaning and preparation included:</p>
+					<ul class="list" style="margin-top:10px;">
+						<li><i class="fas fa-check"></i> Handled missing values in service and billing fields</li>
+						<li><i class="fas fa-check"></i> Removed duplicate customer records</li>
+						<li><i class="fas fa-check"></i> Standardized categorical fields (contract type, payment method)</li>
+						<li><i class="fas fa-check"></i> Converted tenure and charges to consistent numeric types</li>
+						<li><i class="fas fa-check"></i> Bucketed tenure into ranges for segment comparison</li>
+					</ul>
+					<div class="qbox">df.groupby("Contract")["Churn"].value_counts(normalize=True)</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>5. SQL analysis</h2>
+				<div class="card panel">
+					<p class="small"><strong>Purpose:</strong> Overall churn rate.</p>
+					<div class="qbox">SELECT
+    ROUND(100.0 * SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 2) AS churn_rate_pct
+FROM customers;</div>
+				</div>
+				<div class="card panel" style="margin-top:14px;">
+					<p class="small"><strong>Purpose:</strong> Churn rate by contract type.</p>
+					<div class="qbox">SELECT
+    contract,
+    COUNT(*) AS customers,
+    SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) AS churned,
+    ROUND(100.0 * SUM(CASE WHEN churn = 'Yes' THEN 1 ELSE 0 END) / COUNT(*), 2) AS churn_rate_pct
+FROM customers
+GROUP BY contract
+ORDER BY churn_rate_pct DESC;</div>
+				</div>
+				<div class="card panel" style="margin-top:14px;">
+					<p class="small"><strong>Purpose:</strong> Average tenure of churned vs. retained customers.</p>
+					<div class="qbox">SELECT
+    churn,
+    AVG(tenure) AS avg_tenure_months
+FROM customers
+GROUP BY churn;</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>6. KPI analysis</h2>
+				<div class="grid">
+					<div class="card panel"><div class="kicker">Overall Churn Rate</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Highest-Churn Contract Type</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Avg. Tenure (Churned)</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+					<div class="card panel"><div class="kicker">Avg. Tenure (Retained)</div><div class="thumb" style="margin-top:10px;">Add value</div></div>
+				</div>
+				<p class="small" style="margin-top:10px; color: var(--muted);">KPI values should come directly from the dataset — add them once calculated.</p>
+			</section>
+
+			<section class="section">
+				<h2>7. Power BI dashboard</h2>
+				<div class="card panel">
+					<div class="thumb" style="min-height:220px;">Power BI dashboard screenshot coming soon</div>
+					<p class="small" style="margin-top:12px;">Dashboard includes:</p>
+					<ul class="list" style="margin-top:8px;">
+						<li><i class="fas fa-chart-pie"></i> Overall churn rate</li>
+						<li><i class="fas fa-file-contract"></i> Churn by contract type</li>
+						<li><i class="fas fa-clock"></i> Churn by tenure band</li>
+						<li><i class="fas fa-toolbox"></i> Churn by service</li>
+						<li><i class="fas fa-credit-card"></i> Churn by payment method</li>
+						<li><i class="fas fa-users"></i> Customer segment comparison</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>8. Key insights</h2>
+				<div class="card panel">
+					<div class="thumb" style="min-height:100px;">Add key findings once verified — e.g. which contract type or tenure band shows the highest churn.</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>9. Business recommendations</h2>
+				<div class="card panel">
+					<p class="small">Based on the analysis, the following actions could be considered:</p>
+					<ul class="list" style="margin-top:10px;">
+						<li><i class="fas fa-lightbulb"></i> Target retention offers at the contract type / tenure band showing the highest churn.</li>
+						<li><i class="fas fa-lightbulb"></i> Review pricing or service bundling for segments with above-average churn.</li>
+						<li><i class="fas fa-lightbulb"></i> Consider proactive outreach for customers nearing high-risk tenure milestones.</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>10. Technical workflow</h2>
+				<div class="card panel">
+					<div class="workflow">
+						<div class="step">Raw Dataset</div><span class="arrow">→</span>
+						<div class="step">Python Cleaning / EDA</div><span class="arrow">→</span>
+						<div class="step">SQL Analysis</div><span class="arrow">→</span>
+						<div class="step">Data Model</div><span class="arrow">→</span>
+						<div class="step">Power BI</div><span class="arrow">→</span>
+						<div class="step">KPIs & Insights</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>11. Tools & technologies</h2>
+				<div class="card panel">
+					<div class="tags">Python • SQL • Power BI</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>12. GitHub repository</h2>
+				<div class="card panel">
+					<a class="btn primary" href="https://github.com/poojasri234" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> Add link to this project's repository</a>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="card panel" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+					<div>
+						<h3 style="font-size:18px;">Next case study</h3>
+						<p class="small" style="margin-top:6px;">Customer Segmentation & Business Insights</p>
+					</div>
+					<a class="btn primary" href="project-insights.html">View</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div>© <span id="year"></span> Poojasri Medikonda</div>
+			<div class="small">Data Analyst | Business Analyst • SQL • Power BI • Excel • Python</div>
+			<div class="social-links">
+				<a href="https://www.linkedin.com/in/poojasree23" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+				<a href="https://github.com/poojasri234" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+				<a href="mailto:poojasrimedikonda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
