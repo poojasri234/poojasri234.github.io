@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Poojasri Medikonda — Data Analyst portfolio. SQL, Python, Power BI, Tableau, Excel, and data-quality analysis.">
+  <meta name="description" content="Poojasri Medikonda — Data Analyst portfolio with SQL, Python, Power BI, Tableau, Excel, data-quality analysis, and sourced project visualizations.">
   <title>Poojasri Medikonda | Data Analyst</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -38,25 +38,85 @@
 
       <section class="section" id="work" aria-labelledby="work-title">
         <h2 id="work-title">Selected work</h2>
-        <p class="section-intro">Three concise public-data studies showing how I clean data, define metrics, and turn results into actions a business team can discuss.</p>
+        <p class="section-intro">Three public-data studies showing the metrics, comparisons, and trends behind my analysis.</p>
         <div class="project-grid">
-          <article class="project">
+          <article class="project project-visual">
             <div class="project-type">Sales analysis</div>
             <h3>E-Commerce Sales &amp; Customer Analysis</h3>
-            <p>Validated transaction data and analysed sales trends, repeat purchasing, and customer concentration.</p>
+            <p>Validated transaction data, then analysed monthly sales trends across eligible invoices.</p>
+            <figure class="chart-figure">
+              <figcaption>Monthly gross invoiced sales (£m)</figcaption>
+              <svg class="chart chart-line" viewBox="0 0 320 142" role="img" aria-labelledby="sales-chart-title sales-chart-desc">
+                <title id="sales-chart-title">Monthly gross invoiced sales from December 2010 to November 2011</title>
+                <desc id="sales-chart-desc">Gross invoiced sales rose from 0.82 million pounds in December 2010 to a peak of 1.50 million pounds in November 2011.</desc>
+                <line class="chart-grid" x1="36" y1="18" x2="300" y2="18" />
+                <line class="chart-grid" x1="36" y1="67" x2="300" y2="67" />
+                <line class="chart-grid" x1="36" y1="116" x2="300" y2="116" />
+                <text class="chart-axis-label" x="0" y="21">£1.6m</text>
+                <text class="chart-axis-label" x="0" y="70">£0.8m</text>
+                <text class="chart-axis-label" x="15" y="119">£0</text>
+                <path class="chart-trend" d="M 36 65.7 L 60 73.7 L 84 84.0 L 108 72.1 L 132 83.1 L 156 68.9 L 180 69.4 L 204 72.0 L 228 69.6 L 252 51.3 L 276 45.5 L 300 23.9" />
+                <circle class="chart-marker" cx="300" cy="23.9" r="3.5" />
+                <text class="chart-value-label" x="298" y="14" text-anchor="end">£1.50m</text>
+                <text class="chart-axis-label" x="36" y="135" text-anchor="middle">Dec</text>
+                <text class="chart-axis-label" x="84" y="135" text-anchor="middle">Feb</text>
+                <text class="chart-axis-label" x="132" y="135" text-anchor="middle">Apr</text>
+                <text class="chart-axis-label" x="180" y="135" text-anchor="middle">Jun</text>
+                <text class="chart-axis-label" x="228" y="135" text-anchor="middle">Aug</text>
+                <text class="chart-axis-label" x="276" y="135" text-anchor="middle">Oct</text>
+                <text class="chart-axis-label" x="300" y="135" text-anchor="end">Nov</text>
+              </svg>
+            </figure>
             <div class="metric"><strong>£10.64M</strong><span>gross invoiced sales across 19,960 eligible invoices</span></div>
           </article>
-          <article class="project">
+
+          <article class="project project-visual">
             <div class="project-type">Customer analytics</div>
             <h3>Customer Churn Analysis</h3>
-            <p>Compared contract and tenure cohorts to identify where a retention team should investigate first.</p>
+            <p>Compared contract cohorts to identify where a retention team should investigate first.</p>
+            <figure class="chart-figure">
+              <figcaption>Observed churn by contract type</figcaption>
+              <svg class="chart" viewBox="0 0 320 142" role="img" aria-labelledby="churn-chart-title churn-chart-desc">
+                <title id="churn-chart-title">Observed churn rates by contract type</title>
+                <desc id="churn-chart-desc">Month-to-month customers had observed churn of 42.7 percent, compared with 11.3 percent for one-year customers and 2.8 percent for two-year customers.</desc>
+                <text class="chart-axis-label" x="102" y="14">0%</text>
+                <text class="chart-axis-label" x="188" y="14" text-anchor="middle">25%</text>
+                <text class="chart-axis-label" x="278" y="14" text-anchor="end">50%</text>
+                <line class="chart-grid" x1="100" y1="20" x2="100" y2="124" />
+                <line class="chart-grid" x1="190" y1="20" x2="190" y2="124" />
+                <line class="chart-grid" x1="280" y1="20" x2="280" y2="124" />
+                <text class="chart-category-label" x="0" y="42">Month-to-month</text>
+                <rect class="chart-bar" x="100" y="28" width="154" height="16" />
+                <text class="chart-value-label" x="260" y="41">42.7%</text>
+                <text class="chart-category-label" x="0" y="79">One year</text>
+                <rect class="chart-bar" x="100" y="65" width="41" height="16" />
+                <text class="chart-value-label" x="147" y="78">11.3%</text>
+                <text class="chart-category-label" x="0" y="116">Two year</text>
+                <rect class="chart-bar" x="100" y="102" width="10" height="16" />
+                <text class="chart-value-label" x="116" y="115">2.8%</text>
+              </svg>
+            </figure>
             <div class="metric"><strong>42.7%</strong><span>observed churn for month-to-month customers</span></div>
           </article>
-          <article class="project">
+
+          <article class="project project-visual">
             <div class="project-type">Customer insights</div>
             <h3>Customer Segmentation</h3>
-            <p>Used recency and invoice frequency to make customer value concentration easier to prioritize.</p>
-            <div class="metric"><strong>74.7%</strong><span>of known-customer sales from the top 20% of customers</span></div>
+            <p>Used recency and invoice frequency to make customer groups easier to prioritize.</p>
+            <figure class="chart-figure">
+              <figcaption>Known-customer sales concentration</figcaption>
+              <svg class="chart" viewBox="0 0 320 132" role="img" aria-labelledby="segment-chart-title segment-chart-desc">
+                <title id="segment-chart-title">Known-customer sales concentration</title>
+                <desc id="segment-chart-desc">The top 20 percent of known customers, 868 customers, generated 74.7 percent of known-customer sales. The remaining 80 percent, 3,470 customers, generated 25.3 percent.</desc>
+                <text class="chart-category-label" x="0" y="25">Top 20% of customers · 868</text>
+                <rect class="chart-bar" x="0" y="36" width="224" height="18" />
+                <text class="chart-value-label" x="231" y="50">74.7%</text>
+                <text class="chart-category-label" x="0" y="89">Other 80% of customers · 3,470</text>
+                <rect class="chart-bar chart-bar-muted" x="0" y="100" width="76" height="18" />
+                <text class="chart-value-label" x="83" y="114">25.3%</text>
+              </svg>
+            </figure>
+            <div class="metric"><strong>74.7%</strong><span>of known-customer sales came from the top 20% of customers</span></div>
           </article>
         </div>
         <p class="source-note">E-commerce and segmentation metrics use the <a href="https://doi.org/10.24432/C5BW33" target="_blank" rel="noreferrer">UCI Online Retail dataset</a>. Churn metrics use <a href="https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv" target="_blank" rel="noreferrer">IBM’s fictional telco sample</a>. These are portfolio analysis outputs, not employer results.</p>
