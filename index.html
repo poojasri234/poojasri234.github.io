@@ -32,13 +32,13 @@
         <ul class="quick-facts" aria-label="Professional summary">
           <li><strong>BrainOvision Solutions</strong> · Data Science Intern</li>
           <li><strong>JNTU Kakinada</strong> · B.Tech, IT</li>
-          <li><strong>Hyderabad</strong> · Open to Bengaluru roles</li>
+          <li><strong>Hyderabad</strong> · Data quality &amp; risk analytics</li>
         </ul>
       </section>
 
       <section class="section" id="work" aria-labelledby="work-title">
         <h2 id="work-title">Selected work</h2>
-        <p class="section-intro">Three public-data studies showing the metrics, comparisons, and trends behind my analysis.</p>
+        <p class="section-intro">Four public-data studies showing the metrics, comparisons, and trends behind my analysis.</p>
         <div class="project-grid">
           <article class="project project-visual">
             <div class="project-type">Sales analysis</div>
@@ -118,8 +118,39 @@
             </figure>
             <div class="metric"><strong>74.7%</strong><span>of known-customer sales came from the top 20% of customers</span></div>
           </article>
+
+          <article class="project project-visual">
+            <div class="project-type">Risk analytics</div>
+            <h3>Credit Default Risk Analysis</h3>
+            <p>Validated public client data and compared observed next-month default rates across recent repayment-status cohorts.</p>
+            <figure class="chart-figure">
+              <figcaption>Observed default by recent repayment status</figcaption>
+              <svg class="chart" viewBox="0 0 320 142" role="img" aria-labelledby="risk-chart-title risk-chart-desc">
+                <title id="risk-chart-title">Observed next-month default rates by recent repayment status</title>
+                <desc id="risk-chart-desc">Clients with no reported recent payment delay had an observed default rate of 13.8 percent, those with one month delay had 33.9 percent, and those with two or more months delay had 69.6 percent.</desc>
+                <text class="chart-axis-label" x="100" y="14">0%</text>
+                <text class="chart-axis-label" x="160" y="14" text-anchor="middle">25%</text>
+                <text class="chart-axis-label" x="220" y="14" text-anchor="middle">50%</text>
+                <text class="chart-axis-label" x="280" y="14" text-anchor="end">75%</text>
+                <line class="chart-grid" x1="100" y1="20" x2="100" y2="124" />
+                <line class="chart-grid" x1="160" y1="20" x2="160" y2="124" />
+                <line class="chart-grid" x1="220" y1="20" x2="220" y2="124" />
+                <line class="chart-grid" x1="280" y1="20" x2="280" y2="124" />
+                <text class="chart-category-label" x="0" y="42">No reported delay</text>
+                <rect class="chart-bar chart-bar-muted" x="100" y="28" width="33" height="16" />
+                <text class="chart-value-label" x="139" y="41">13.8%</text>
+                <text class="chart-category-label" x="0" y="79">1 month delay</text>
+                <rect class="chart-bar" x="100" y="65" width="81" height="16" />
+                <text class="chart-value-label" x="187" y="78">33.9%</text>
+                <text class="chart-category-label" x="0" y="116">2+ months delay</text>
+                <rect class="chart-bar" x="100" y="102" width="167" height="16" />
+                <text class="chart-value-label" x="273" y="115">69.6%</text>
+              </svg>
+            </figure>
+            <div class="metric"><strong>22.1%</strong><span>overall observed next-month default rate across 30,000 public records</span></div>
+          </article>
         </div>
-        <p class="source-note">E-commerce and segmentation metrics use the <a href="https://doi.org/10.24432/C5BW33" target="_blank" rel="noreferrer">UCI Online Retail dataset</a>. Churn metrics use <a href="https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv" target="_blank" rel="noreferrer">IBM’s fictional telco sample</a>. These are portfolio analysis outputs, not employer results.</p>
+        <p class="source-note">E-commerce and segmentation metrics use the <a href="https://doi.org/10.24432/C5BW33" target="_blank" rel="noreferrer">UCI Online Retail dataset</a>. Churn metrics use <a href="https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv" target="_blank" rel="noreferrer">IBM’s fictional telco sample</a>. Credit-risk metrics use the <a href="https://doi.org/10.24432/C55S3H" target="_blank" rel="noreferrer">UCI Default of Credit Card Clients dataset</a>. These are portfolio analysis outputs, not employer results.</p>
       </section>
 
       <section class="section two-column" id="skills" aria-labelledby="skills-title">
