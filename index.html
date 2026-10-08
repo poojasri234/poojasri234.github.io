@@ -3,192 +3,350 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Poojasri Medikonda — Data Analyst portfolio with SQL, Python, Power BI, Tableau, Excel, data-quality analysis, and sourced project visualizations.">
+  <meta name="description" content="Poojasri Medikonda — Data Analyst portfolio. SQL, Excel, Power BI, Python, data quality, KPI reporting, and interactive analysis projects.">
+  <meta name="theme-color" content="#102235">
   <title>Poojasri Medikonda | Data Analyst</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+:root {
+  --navy: #102235;
+  --navy-soft: #1d354b;
+  --accent: #0b6b64;
+  --accent-pale: #e9f5f2;
+  --paper: #f6f8fa;
+  --surface: #ffffff;
+  --line: #d8e0e7;
+  --muted: #5d6d7d;
+}
+
+.home-page { background: var(--paper); color: var(--navy); }
+.home-page .site-header { position: sticky; top: 0; z-index: 5; border-color: rgba(216, 224, 231, .9); background: rgba(255, 255, 255, .95); backdrop-filter: blur(10px); }
+.home-page .home-nav { min-height: 68px; }
+.home-page .brand { color: var(--navy); }
+.home-page .brand small { color: var(--muted); }
+.home-page .nav-links a { color: #435464; }
+.home-page .nav-links a:hover { color: var(--accent); }
+.home-page .resume-button { border-color: #bcc9d3; color: var(--navy); }
+.home-page .resume-button:hover { color: var(--accent); border-color: var(--accent); }
+.home-page main { padding: 0 0 48px; }
+
+.hero-section { padding: 76px 0 66px; background: linear-gradient(135deg, #fff 0%, #f7faf9 62%, #edf5f3 100%); border-bottom: 1px solid var(--line); }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); align-items: center; gap: clamp(40px, 7vw, 94px); }
+.home-page .home-eyebrow, .section-label { margin: 0 0 12px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.home-page h1 { max-width: 780px; margin-bottom: 20px; color: var(--navy); font-size: clamp(39px, 5.2vw, 66px); line-height: 1.04; letter-spacing: -.05em; }
+.home-page .home-lead { max-width: 690px; margin-bottom: 28px; color: #506172; font-size: 18px; line-height: 1.7; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; }
+.home-page .button.primary { border-color: var(--accent); background: var(--accent); box-shadow: 0 8px 18px rgba(11, 107, 100, .12); }
+.home-page .button.primary:hover { background: #075850; }
+.text-link { color: var(--navy); font-size: 14px; font-weight: 750; text-decoration: none; }
+.text-link:hover { color: var(--accent); }
+
+.analyst-card { padding: 28px 26px 26px; border: 1px solid #cadbd8; border-radius: 12px; background: var(--surface); box-shadow: 0 15px 35px rgba(16, 34, 53, .06); }
+.card-label { margin: 0 0 18px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.analyst-card ul { display: grid; gap: 17px; margin: 0; padding: 0; list-style: none; }
+.analyst-card li { display: grid; gap: 2px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.analyst-card li:last-child { padding-bottom: 0; border-bottom: 0; }
+.analyst-card strong { color: var(--navy); font-size: 15px; }
+.analyst-card span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+.proof-strip { border-bottom: 1px solid var(--line); background: var(--navy); }
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.proof-grid > div { display: grid; align-content: center; min-height: 115px; padding: 20px 28px; border-right: 1px solid rgba(255, 255, 255, .16); }
+.proof-grid > div:first-child { padding-left: 0; }
+.proof-grid > div:last-child { border-right: 0; }
+.proof-grid strong { color: #fff; font-size: 19px; letter-spacing: -.02em; }
+.proof-grid span { margin-top: 5px; color: #b9c8d3; font-size: 13px; line-height: 1.45; }
+
+.home-page .section { margin-top: 0; padding: 88px 0; }
+.work-section, .method-section { background: var(--surface); }
+.expertise-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-heading { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 60px; align-items: end; margin-bottom: 30px; }
+.section-heading h2, .method-layout h2, .experience-card h2, .contact-card h2 { margin: 0; color: var(--navy); font-size: clamp(28px, 3.2vw, 39px); line-height: 1.12; letter-spacing: -.04em; }
+.section-heading > p { max-width: 530px; margin: 0 0 2px; color: var(--muted); font-size: 15px; line-height: 1.65; }
+
+.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.work-card { display: flex; min-height: 335px; flex-direction: column; padding: 27px; border: 1px solid var(--line); border-radius: 11px; background: #fff; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.work-card:hover { border-color: #adc9c4; box-shadow: 0 12px 24px rgba(16, 34, 53, .06); transform: translateY(-2px); }
+.work-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.work-card .project-type { margin: 0; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.project-number { color: #9eacb8; font-size: 12px; font-weight: 750; }
+.work-card h3 { margin: 0 0 10px; color: var(--navy); font-size: 21px; line-height: 1.25; }
+.work-card > p:not(.tool-line) { max-width: 510px; margin-bottom: 21px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.metric-line { display: grid; gap: 2px; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.metric-line strong { color: var(--navy); font-size: 25px; letter-spacing: -.035em; }
+.metric-line span { color: #596b7b; font-size: 12px; line-height: 1.45; }
+.tool-line { margin: 15px 0 auto; color: var(--accent); font-size: 12px; font-weight: 700; }
+.work-links { display: flex; flex-wrap: wrap; gap: 18px; padding-top: 22px; }
+.work-links a { color: var(--navy); font-size: 13px; font-weight: 800; text-decoration: none; }
+.work-links a:first-child { color: var(--accent); }
+.work-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.expertise-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.expertise-grid article { min-height: 185px; padding: 22px; border-top: 3px solid var(--accent); background: var(--surface); }
+.expertise-grid h3 { margin: 0 0 10px; color: var(--navy); font-size: 16px; line-height: 1.3; }
+.expertise-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.tool-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.tool-row span { padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; color: #415464; background: var(--surface); font-size: 12px; font-weight: 700; }
+.tool-row em { color: var(--accent); font-size: 10px; font-style: normal; font-weight: 750; }
+
+.method-section { border-bottom: 1px solid var(--line); }
+.method-layout { display: grid; grid-template-columns: minmax(240px, .6fr) minmax(0, 1.4fr); gap: clamp(40px, 8vw, 120px); }
+.process-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.process-list li { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 0 0 19px; margin-bottom: 19px; border-bottom: 1px solid var(--line); }
+.process-list li:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+.process-list li > span { color: var(--accent); font-size: 12px; font-weight: 800; }
+.process-list strong { color: var(--navy); font-size: 15px; }
+.process-list p { margin: 4px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+.experience-section { background: #f0f6f5; }
+.experience-card { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1fr); gap: 80px; align-items: end; padding: 35px; border: 1px solid #cde1dd; border-radius: 12px; background: var(--surface); }
+.experience-company { margin: 7px 0 0; color: var(--accent); font-size: 14px; font-weight: 750; }
+.experience-card > p { max-width: 630px; margin: 0; color: #4e6371; font-size: 15px; line-height: 1.7; }
+
+.contact-section { background: var(--navy); }
+.contact-card { display: flex; align-items: end; justify-content: space-between; gap: 50px; }
+.contact-card .section-label { color: #83c2b9; }
+.contact-card h2 { color: #fff; }
+.contact-card p:not(.section-label) { max-width: 560px; margin: 11px 0 0; color: #bdcad4; font-size: 15px; line-height: 1.6; }
+.home-contact-links { justify-content: flex-end; }
+.home-contact-links a { min-width: 76px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.25); color: #fff; }
+.home-contact-links a:hover { color: #90d2c8; border-color: #90d2c8; text-decoration: none; }
+.home-footer { padding: 23px 0 30px; border-top: 1px solid rgba(255,255,255,.16); color: #aebeca; background: var(--navy); }
+
+@media (max-width: 860px) {
+  .hero-layout, .section-heading, .method-layout, .experience-card { grid-template-columns: 1fr; gap: 30px; }
+  .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-heading > p { max-width: 650px; }
+  .experience-card { align-items: start; }
+  .proof-grid > div { padding: 20px; }
+  .proof-grid > div:first-child { padding-left: 0; }
+}
+
+@media (max-width: 620px) {
+  .home-page .home-nav { padding: 15px 0; }
+  .home-page .nav-links { order: 3; }
+  .home-page .resume-button { display: none; }
+  .hero-section { padding: 55px 0 48px; }
+  .home-page h1 { font-size: clamp(37px, 12vw, 51px); }
+  .home-page .home-lead { font-size: 16px; }
+  .analyst-card { padding: 23px 20px; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-grid > div, .proof-grid > div:first-child { min-height: auto; padding: 17px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+  .proof-grid > div:last-child { border-bottom: 0; }
+  .home-page .section { padding: 60px 0; }
+  .work-grid, .expertise-grid { grid-template-columns: 1fr; }
+  .work-card { min-height: 0; padding: 23px; }
+  .contact-card { align-items: flex-start; flex-direction: column; }
+  .home-contact-links { justify-content: flex-start; }
+  .experience-card { padding: 26px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card { transition: none; }
+  .work-card:hover { transform: none; }
+}
+
+  </style>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container nav">
+  <header class="site-header home-header">
+    <div class="container nav home-nav">
       <a class="brand" href="#main">Poojasri Medikonda<small>Data Analyst</small></a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#work">Work</a>
+        <a href="#work">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="button" href="Poojasri_Medikonda_Data_Analyst_Resume.docx">Download résumé</a>
+      <a class="button resume-button" href="Poojasri_Medikonda_Data_Analyst_Resume.docx">Download résumé</a>
     </div>
   </header>
 
   <main id="main">
-    <div class="container">
-      <section class="hero" aria-labelledby="intro-title">
-        <p class="eyebrow">SQL · Python · Power BI · Excel</p>
-        <h1 id="intro-title">Clear analysis for practical business decisions.</h1>
-        <p class="lead">I am a 2023 Information Technology graduate with internship and project experience in data validation, KPI reporting, dashboard design, and trend analysis.</p>
-        <a class="button primary" href="#work">View selected work</a>
-        <ul class="quick-facts" aria-label="Professional summary">
-          <li><strong>BrainOvision Solutions</strong> · Data Science Intern</li>
-          <li><strong>JNTU Kakinada</strong> · B.Tech, IT</li>
-          <li><strong>Hyderabad</strong> · Data quality &amp; risk analytics</li>
-        </ul>
-      </section>
-
-      <section class="section" id="work" aria-labelledby="work-title">
-        <h2 id="work-title">Selected work</h2>
-        <p class="section-intro">Four public-data studies showing the metrics, comparisons, and trends behind my analysis.</p>
-        <div class="project-grid">
-          <article class="project project-visual">
-            <div class="project-type">Sales analysis</div>
-            <h3>E-Commerce Sales &amp; Customer Analysis</h3>
-            <p>Validated transaction data, then analysed monthly sales trends across eligible invoices.</p>
-            <figure class="chart-figure">
-              <figcaption>Monthly gross invoiced sales (£m)</figcaption>
-              <svg class="chart chart-line" viewBox="0 0 320 142" role="img" aria-labelledby="sales-chart-title sales-chart-desc">
-                <title id="sales-chart-title">Monthly gross invoiced sales from December 2010 to November 2011</title>
-                <desc id="sales-chart-desc">Gross invoiced sales rose from 0.82 million pounds in December 2010 to a peak of 1.50 million pounds in November 2011.</desc>
-                <line class="chart-grid" x1="36" y1="18" x2="300" y2="18" />
-                <line class="chart-grid" x1="36" y1="67" x2="300" y2="67" />
-                <line class="chart-grid" x1="36" y1="116" x2="300" y2="116" />
-                <text class="chart-axis-label" x="0" y="21">£1.6m</text>
-                <text class="chart-axis-label" x="0" y="70">£0.8m</text>
-                <text class="chart-axis-label" x="15" y="119">£0</text>
-                <path class="chart-trend" d="M 36 65.7 L 60 73.7 L 84 84.0 L 108 72.1 L 132 83.1 L 156 68.9 L 180 69.4 L 204 72.0 L 228 69.6 L 252 51.3 L 276 45.5 L 300 23.9" />
-                <circle class="chart-marker" cx="300" cy="23.9" r="3.5" />
-                <text class="chart-value-label" x="298" y="14" text-anchor="end">£1.50m</text>
-                <text class="chart-axis-label" x="36" y="135" text-anchor="middle">Dec</text>
-                <text class="chart-axis-label" x="84" y="135" text-anchor="middle">Feb</text>
-                <text class="chart-axis-label" x="132" y="135" text-anchor="middle">Apr</text>
-                <text class="chart-axis-label" x="180" y="135" text-anchor="middle">Jun</text>
-                <text class="chart-axis-label" x="228" y="135" text-anchor="middle">Aug</text>
-                <text class="chart-axis-label" x="276" y="135" text-anchor="middle">Oct</text>
-                <text class="chart-axis-label" x="300" y="135" text-anchor="end">Nov</text>
-              </svg>
-            </figure>
-            <div class="metric"><strong>£10.64M</strong><span>gross invoiced sales across 19,960 eligible invoices</span></div>
-          </article>
-
-          <article class="project project-visual">
-            <div class="project-type">Customer analytics</div>
-            <h3>Customer Churn Analysis</h3>
-            <p>Compared contract cohorts to identify where a retention team should investigate first.</p>
-            <figure class="chart-figure">
-              <figcaption>Observed churn by contract type</figcaption>
-              <svg class="chart" viewBox="0 0 320 142" role="img" aria-labelledby="churn-chart-title churn-chart-desc">
-                <title id="churn-chart-title">Observed churn rates by contract type</title>
-                <desc id="churn-chart-desc">Month-to-month customers had observed churn of 42.7 percent, compared with 11.3 percent for one-year customers and 2.8 percent for two-year customers.</desc>
-                <text class="chart-axis-label" x="102" y="14">0%</text>
-                <text class="chart-axis-label" x="188" y="14" text-anchor="middle">25%</text>
-                <text class="chart-axis-label" x="278" y="14" text-anchor="end">50%</text>
-                <line class="chart-grid" x1="100" y1="20" x2="100" y2="124" />
-                <line class="chart-grid" x1="190" y1="20" x2="190" y2="124" />
-                <line class="chart-grid" x1="280" y1="20" x2="280" y2="124" />
-                <text class="chart-category-label" x="0" y="42">Month-to-month</text>
-                <rect class="chart-bar" x="100" y="28" width="154" height="16" />
-                <text class="chart-value-label" x="260" y="41">42.7%</text>
-                <text class="chart-category-label" x="0" y="79">One year</text>
-                <rect class="chart-bar" x="100" y="65" width="41" height="16" />
-                <text class="chart-value-label" x="147" y="78">11.3%</text>
-                <text class="chart-category-label" x="0" y="116">Two year</text>
-                <rect class="chart-bar" x="100" y="102" width="10" height="16" />
-                <text class="chart-value-label" x="116" y="115">2.8%</text>
-              </svg>
-            </figure>
-            <div class="metric"><strong>42.7%</strong><span>observed churn for month-to-month customers</span></div>
-          </article>
-
-          <article class="project project-visual">
-            <div class="project-type">Customer insights</div>
-            <h3>Customer Segmentation</h3>
-            <p>Used recency and invoice frequency to make customer groups easier to prioritize.</p>
-            <figure class="chart-figure">
-              <figcaption>Known-customer sales concentration</figcaption>
-              <svg class="chart" viewBox="0 0 320 132" role="img" aria-labelledby="segment-chart-title segment-chart-desc">
-                <title id="segment-chart-title">Known-customer sales concentration</title>
-                <desc id="segment-chart-desc">The top 20 percent of known customers, 868 customers, generated 74.7 percent of known-customer sales. The remaining 80 percent, 3,470 customers, generated 25.3 percent.</desc>
-                <text class="chart-category-label" x="0" y="25">Top 20% of customers · 868</text>
-                <rect class="chart-bar" x="0" y="36" width="224" height="18" />
-                <text class="chart-value-label" x="231" y="50">74.7%</text>
-                <text class="chart-category-label" x="0" y="89">Other 80% of customers · 3,470</text>
-                <rect class="chart-bar chart-bar-muted" x="0" y="100" width="76" height="18" />
-                <text class="chart-value-label" x="83" y="114">25.3%</text>
-              </svg>
-            </figure>
-            <div class="metric"><strong>74.7%</strong><span>of known-customer sales came from the top 20% of customers</span></div>
-          </article>
-
-          <article class="project project-visual">
-            <div class="project-type">Risk analytics</div>
-            <h3>Credit Default Risk Analysis</h3>
-            <p>Validated public client data and compared observed next-month default rates across recent repayment-status cohorts.</p>
-            <figure class="chart-figure">
-              <figcaption>Observed default by recent repayment status</figcaption>
-              <svg class="chart" viewBox="0 0 320 142" role="img" aria-labelledby="risk-chart-title risk-chart-desc">
-                <title id="risk-chart-title">Observed next-month default rates by recent repayment status</title>
-                <desc id="risk-chart-desc">Clients with no reported recent payment delay had an observed default rate of 13.8 percent, those with one month delay had 33.9 percent, and those with two or more months delay had 69.6 percent.</desc>
-                <text class="chart-axis-label" x="100" y="14">0%</text>
-                <text class="chart-axis-label" x="160" y="14" text-anchor="middle">25%</text>
-                <text class="chart-axis-label" x="220" y="14" text-anchor="middle">50%</text>
-                <text class="chart-axis-label" x="280" y="14" text-anchor="end">75%</text>
-                <line class="chart-grid" x1="100" y1="20" x2="100" y2="124" />
-                <line class="chart-grid" x1="160" y1="20" x2="160" y2="124" />
-                <line class="chart-grid" x1="220" y1="20" x2="220" y2="124" />
-                <line class="chart-grid" x1="280" y1="20" x2="280" y2="124" />
-                <text class="chart-category-label" x="0" y="42">No reported delay</text>
-                <rect class="chart-bar chart-bar-muted" x="100" y="28" width="33" height="16" />
-                <text class="chart-value-label" x="139" y="41">13.8%</text>
-                <text class="chart-category-label" x="0" y="79">1 month delay</text>
-                <rect class="chart-bar" x="100" y="65" width="81" height="16" />
-                <text class="chart-value-label" x="187" y="78">33.9%</text>
-                <text class="chart-category-label" x="0" y="116">2+ months delay</text>
-                <rect class="chart-bar" x="100" y="102" width="167" height="16" />
-                <text class="chart-value-label" x="273" y="115">69.6%</text>
-              </svg>
-            </figure>
-            <div class="metric"><strong>22.1%</strong><span>overall observed next-month default rate across 30,000 public records</span></div>
-          </article>
+    <section class="hero-section">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow home-eyebrow">Data Analyst · 2023 IT Graduate</p>
+          <h1>Reliable analysis for clearer business decisions.</h1>
+          <p class="lead home-lead">I’m Poojasri Medikonda, an IT graduate specializing in SQL, Excel, Power BI, and Python. I turn raw data into trusted KPIs, focused analysis, and stakeholder-ready dashboards.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View live projects</a>
+            <a class="text-link" href="https://github.com/poojasri234" target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <p class="source-note">E-commerce and segmentation metrics use the <a href="https://doi.org/10.24432/C5BW33" target="_blank" rel="noreferrer">UCI Online Retail dataset</a>. Churn metrics use <a href="https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv" target="_blank" rel="noreferrer">IBM’s fictional telco sample</a>. Credit-risk metrics use the <a href="https://doi.org/10.24432/C55S3H" target="_blank" rel="noreferrer">UCI Default of Credit Card Clients dataset</a>. These are portfolio analysis outputs, not employer results.</p>
-      </section>
-
-      <section class="section two-column" id="skills" aria-labelledby="skills-title">
-        <div>
-          <h2 id="skills-title">Core toolkit</h2>
-          <ul class="skill-list">
-            <li>SQL and data validation</li>
-            <li>Python and pandas</li>
-            <li>Power BI and DAX</li>
-            <li>Tableau and Excel</li>
-            <li>KPI reporting</li>
-            <li>Data cleaning and documentation</li>
+        <aside class="analyst-card" aria-label="Professional focus">
+          <p class="card-label">Professional focus</p>
+          <ul>
+            <li><strong>KPI reporting</strong><span>Clear definitions and consistent metric logic</span></li>
+            <li><strong>Data quality</strong><span>Validation, reconciliation, and documented assumptions</span></li>
+            <li><strong>Dashboard delivery</strong><span>Concise reporting for business teams</span></li>
           </ul>
-        </div>
-        <div>
-          <h2>How I work</h2>
-          <p class="method">Start with reliable data. Check completeness, duplicates, types, and business rules; reconcile key results; then communicate the trend, limitation, and recommended next step clearly.</p>
-        </div>
-      </section>
+        </aside>
+      </div>
+    </section>
 
-      <section class="section" id="contact" aria-labelledby="contact-title">
-        <div class="contact">
+    <section class="proof-strip" aria-label="Portfolio summary">
+      <div class="container proof-grid">
+        <div><strong>4</strong><span>reproducible analysis projects</span></div>
+        <div><strong>SQL · Python · BI</strong><span>analysis, validation, and visualization</span></div>
+        <div><strong>Public datasets</strong><span>sources and scope documented in each repository</span></div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading">
           <div>
-            <h2 id="contact-title">Let’s connect</h2>
-            <p>Available for entry-level Data Analyst, Business Analyst, Operations Analyst, and Risk Analyst roles.</p>
+            <p class="section-label">Portfolio</p>
+            <h2 id="work-title">Interactive project work</h2>
           </div>
-          <div class="contact-links">
-            <a href="mailto:poojasrimedikonda@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/poojasree23/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/poojasri234" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
+          <p>Each project links to a live dashboard and a GitHub repository with source notes, analysis code, SQL, aggregate outputs, and Power BI build materials.</p>
         </div>
-      </section>
-    </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-card-top">
+              <p class="project-type">Sales analysis</p>
+              <span class="project-number">01</span>
+            </div>
+            <h3>E-commerce Sales Analysis</h3>
+            <p>Prepared and analyzed public retail transactions to surface sales trends, customer patterns, and data-quality checks.</p>
+            <div class="metric-line"><strong>£10.64M</strong><span>gross invoiced sales analyzed</span></div>
+            <p class="tool-line">SQL · Python · Power BI</p>
+            <div class="work-links">
+              <a href="https://poojasri234.github.io/ecommerce-sales-analysis/" target="_blank" rel="noreferrer">Live dashboard <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/poojasri234/ecommerce-sales-analysis" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-card-top">
+              <p class="project-type">Customer analytics</p>
+              <span class="project-number">02</span>
+            </div>
+            <h3>Customer Churn Analysis</h3>
+            <p>Compared customer cohorts to identify where observed churn is concentrated and where a retention team could investigate first.</p>
+            <div class="metric-line"><strong>42.71%</strong><span>observed churn for month-to-month contracts</span></div>
+            <p class="tool-line">Python · SQL · Cohort analysis</p>
+            <div class="work-links">
+              <a href="https://poojasri234.github.io/customer-churn-analysis/" target="_blank" rel="noreferrer">Live dashboard <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/poojasri234/customer-churn-analysis" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-card-top">
+              <p class="project-type">Customer insights</p>
+              <span class="project-number">03</span>
+            </div>
+            <h3>Customer Segmentation Analysis</h3>
+            <p>Used recency, frequency, and customer value analysis to make customer groups easier to prioritize.</p>
+            <div class="metric-line"><strong>74.7%</strong><span>of known-customer sales from the top 20%</span></div>
+            <p class="tool-line">Python · SQL · Segmentation</p>
+            <div class="work-links">
+              <a href="https://poojasri234.github.io/customer-segmentation-analysis/" target="_blank" rel="noreferrer">Live dashboard <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/poojasri234/customer-segmentation-analysis" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-card-top">
+              <p class="project-type">Risk analytics</p>
+              <span class="project-number">04</span>
+            </div>
+            <h3>Credit Default Risk Analysis</h3>
+            <p>Analyzed credit-risk cohorts and payment-delay patterns to support descriptive portfolio monitoring.</p>
+            <div class="metric-line"><strong>22.12%</strong><span>observed default rate in the public sample</span></div>
+            <p class="tool-line">Python · SQL · Power BI</p>
+            <div class="work-links">
+              <a href="https://poojasri234.github.io/credit-default-risk-analysis/" target="_blank" rel="noreferrer">Live dashboard <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/poojasri234/credit-default-risk-analysis" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section expertise-section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <div>
+            <p class="section-label">Capabilities</p>
+            <h2 id="skills-title">An analyst’s toolkit</h2>
+          </div>
+          <p>Practical work from the first business question through a documented, reviewable output.</p>
+        </div>
+
+        <div class="expertise-grid">
+          <article>
+            <h3>Analytics &amp; reporting</h3>
+            <p>KPI definition, exploratory analysis, trend and variance review, segmentation, and concise executive summaries.</p>
+          </article>
+          <article>
+            <h3>SQL &amp; data preparation</h3>
+            <p>Joins, CTEs, aggregations, window functions, reporting queries, duplicate checks, and missing-value validation.</p>
+          </article>
+          <article>
+            <h3>Dashboard delivery</h3>
+            <p>Power BI, Excel, and Tableau dashboards with clear visual hierarchy, filters, drilldowns, and business context.</p>
+          </article>
+          <article>
+            <h3>Data quality &amp; documentation</h3>
+            <p>Completeness, validity, uniqueness, reconciliation checks, data dictionaries, assumptions, and repeatable workflows.</p>
+          </article>
+        </div>
+
+        <div class="tool-row" aria-label="Tools">
+          <span>SQL</span><span>Excel</span><span>Python</span><span>Power BI</span><span>Tableau</span><span>pandas</span><span>PySpark <em>learning</em></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" aria-labelledby="method-title">
+      <div class="container method-layout">
+        <div>
+          <p class="section-label">Working approach</p>
+          <h2 id="method-title">From question to decision-ready insight.</h2>
+        </div>
+        <ol class="process-list">
+          <li><span>01</span><div><strong>Define</strong><p>Translate the business question into measurable KPIs and clear scope.</p></div></li>
+          <li><span>02</span><div><strong>Validate</strong><p>Check the data for completeness, duplicates, formats, and reconciled totals.</p></div></li>
+          <li><span>03</span><div><strong>Analyze</strong><p>Explore trends, cohorts, segments, and variance drivers with reproducible logic.</p></div></li>
+          <li><span>04</span><div><strong>Communicate</strong><p>Present the finding, limitation, and next question in a focused dashboard or report.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section experience-section" aria-labelledby="experience-title">
+      <div class="container experience-card">
+        <div>
+          <p class="section-label">Experience</p>
+          <h2 id="experience-title">Data Science Intern</h2>
+          <p class="experience-company">BrainOvision Solutions</p>
+        </div>
+        <p>Applied data analysis practices to project work: collecting and validating data, examining trends and KPIs, and building dashboards that communicate insights clearly to business teams.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-card">
+        <div>
+          <p class="section-label">Connect</p>
+          <h2 id="contact-title">Let’s talk about data.</h2>
+          <p>Interested in Data Analyst, Business Analyst, Operations Analyst, and Risk Analyst opportunities.</p>
+        </div>
+        <div class="contact-links home-contact-links">
+          <a href="mailto:poojasrimedikonda@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/poojasree23/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/poojasri234" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© 2026 Poojasri Medikonda · Data Analyst</div>
+  <footer class="site-footer home-footer">
+    <div class="container">© 2026 Poojasri Medikonda <span aria-hidden="true">·</span> Data Analyst</div>
   </footer>
 </body>
 </html>
